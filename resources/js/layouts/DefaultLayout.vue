@@ -2,7 +2,7 @@
     <div>
       <nav>
         <router-link to="/">ثبت نام</router-link> |
-        <router-link to="/inquiry">استعلام کد  قرعه کشی</router-link>
+        <router-link to="/login">ورود</router-link>
       </nav>
       <router-view  :key="$route.path"  />
     </div>

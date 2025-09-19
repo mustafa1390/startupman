@@ -26,7 +26,7 @@
     <form @submit.prevent="handleRegister" method="post">
 <div  v-if="!this.isComplated" >
         <div class="text-center mb-4">
-            <h3 class="text-center mb-2 text-dark">ثبت نام همایش پیاده روی</h3>
+            <h3 class="text-center mb-2 text-dark">ثبت نام   </h3>
         </div>
 
         <div class="show_index_all show_field show_index_1 show_required" data-uid="c613be801c81b1008524815b97e58631"
@@ -39,7 +39,7 @@
                 <span class="ftext input-group-addon">
                     <span data-toggle="tooltip" data-placement="top" title="" style="color:green;"
                         class="glyphicon glyphicon-user"></span>
-                    <!--<span style="color: red">*</span>-->
+
                 </span>
                 <input type="text" placeholder2="نام و نام خانوادگی *"
                     class="input-lg form-control view_in_editor TYPE_fname digi_field class_required " id="fname"
@@ -50,7 +50,7 @@
             </div>
 
         </div>
-
+<!--
         <div class="show_index_all show_field show_index_1 show_required" data-uid="c613be801c81b1008524815b97e58631"
             data-ftype="fname" style="padding: 15px; ">
             <div class="" style="padding: 10px 5px;  ">
@@ -61,7 +61,7 @@
                 <span class="ftext input-group-addon">
                     <span data-toggle="tooltip" data-placement="top" title="" style="color:green;"
                         class="glyphicon glyphicon-user"></span>
-                    <!--<span style="color: red">*</span>-->
+
                 </span>
                 <input type="text" placeholder2="نام پدر"
                     class="input-lg form-control view_in_editor TYPE_fname digi_field class_required " id="father"
@@ -85,7 +85,7 @@
                 <span class="ftext input-group-addon">
                     <span data-toggle="tooltip" data-placement="top" title="" style="color:green;"
                         class="glyphicon glyphicon-barcode"></span>
-                    <!--<span style="color: red">*</span>-->
+
                 </span>
                 <input type="text" placeholder2="کدملی"
                     class="input-lg form-control view_in_editor TYPE_fname digi_field class_required " id="codmelli"
@@ -95,7 +95,7 @@
                 <br>
             </div>
 
-        </div>
+        </div> -->
 
         <div class="show_index_all show_field show_index_1 show_required" style="padding: 15px; ">
             <div class="" style="padding: 10px 5px;  ">
@@ -107,7 +107,7 @@
                 <span class="ftext input-group-addon">
                     <span data-toggle="tooltip" data-placement="top" title="" style="color:green;"
                         class="glyphicon glyphicon-phone"></span>
-                    <!--<span style="color: red">*</span>-->
+
                 </span>
 
 
@@ -144,8 +144,8 @@
     </form>
 
     <div class="new-account mt-3 text-center">
-        <p class="font-w500"> جهت استعلام کد قرعه کشی
-            <router-link class="text-primary" :to="{ name: 'inquiry' }">
+        <p class="font-w500"> جهت ورود
+            <router-link class="text-primary" :to="{ name: 'login' }">
                 کلیک نمایید
             </router-link>
         </p>

@@ -34,24 +34,7 @@
         <!--<meta name="revisit-after" content="1 days">-->
         <meta name="language" content="Farsi">
         <meta name="url" content="#">
-
-        <meta property="article:tag" content="پرسشنامه آنلاین">
-        <meta property="article:tag" content="نظرسنجی آنلاین">
-        <meta property="article:tag" content="نظرسنجی اینترنتی">
-        <meta property="article:tag" content="طراحی پرسشنامه آنلاین">
-        <meta property="article:tag" content="ساخت نظرسنجی">
-        <meta property="article:tag" content="فرم درگاه پرداخت">
-        <meta property="article:tag" content="ثبت نام آنلاین">
-        <meta property="article:tag" content="احراز هویت آنلاین">
-        <meta property="article:tag" content="آزمون آنلاین">
-        <meta property="article:tag" content="تکالیف آنلاین">
-        <meta property="article:tag" content="همایش پیاده روی">
-        <meta property="article:tag" content="#">
-        <meta property="article:tag" content="#">
-        <meta property="article:tag" content="مسابقه آنلاین">
-        <meta property="article:tag" content="مسابقه">
-        <meta property="article:tag" content="قرعه کشی">
-        <meta property="article:tag" content="مدیو">
+ 
         <meta property="article:tag" content="ایجاد فرم ثبت نام">
 
         <meta name="twitter:card" content="summary">

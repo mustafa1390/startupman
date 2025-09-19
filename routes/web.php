@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AdminAuthController;
 
 // Route::get('/', function () {
 //     return view('welcome');
-// });
+//  });
 Route::get('/{any}', [IndexController::class, 'index'])->where('any', '.*')->where('any', '^(?!admin).*')->name('vuepanel');
 // Route::get('/demo', [IndexController::class, 'demo'])->name('demo');
 

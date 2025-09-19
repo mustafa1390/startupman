@@ -30,12 +30,12 @@
     <form @submit.prevent="handleInquiry" method="post">
 <div  v-if="(!this.isComplated )&& (!isNouser)" >
         <div class="text-center mb-4">
-            <h3 class="text-center mb-2 text-dark">    استعلام ثبت نام همایش پیاده روی</h3>
+            <h3 class="text-center mb-2 text-dark">ورود</h3>
         </div>
 
 
 
-        <div class="show_index_all show_field show_index_1 show_required" data-uid="c613be801c81b1008524815b97e58631"
+        <!-- <div class="show_index_all show_field show_index_1 show_required" data-uid="c613be801c81b1008524815b97e58631"
               style="padding: 15px; ">
             <div class="" style="padding: 10px 5px;  ">
                        کدملی   <span style="color: red">*</span>
@@ -47,8 +47,7 @@
                 <span class="ftext input-group-addon">
                     <span data-toggle="tooltip" data-placement="top" title="" style="color:green;"
                         class="glyphicon glyphicon-barcode"></span>
-                    <!--<span style="color: red">*</span>-->
-                </span>
+                 </span>
                 <input type="text" placeholder2="کدملی"
                     class="input-lg form-control view_in_editor   digi_field class_required " id="codmelli"
                     v-model="codmelli"   @input="checkCardmelli"  required>
@@ -57,7 +56,7 @@
                 <br>
             </div>
 
-        </div>
+        </div> -->
 
         <div class="show_index_all show_field show_index_1 show_required" style="padding: 15px; ">
             <div class="" style="padding: 10px 5px;  ">
@@ -94,7 +93,7 @@
             <div v-if="loading" class="spinner"></div>
             <div style="height: 40px;
   padding-top: 10px;" v-else>
-                  استعلام ثبت نام
+                       ورود
             </div>
         </button>
 
