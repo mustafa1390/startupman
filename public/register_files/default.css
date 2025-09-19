@@ -1,0 +1,114 @@
+#body ,body{
+    border-radius: 0px;
+    float: none;
+    padding: 0px;
+    background-color: #E1E1E1 ;
+    /*background-color2: #ffffff70;*/
+}
+
+
+.header_title{
+    border-radius: 0px;
+    padding: 10px 20px 80px 20px;
+    color: white;
+    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15);
+    background-size: cover;
+    background-image: url('/static/img/header/form_h1.jpg');
+}
+.header_title_img1{
+    background-image: url('/static/img/header/form_h1.jpg');
+}
+.header_title_img2{
+    background-image: url('/static/img/header/form_h2.jpg');
+}
+.header_title_img3{
+    background-image: url('/static/img/header/form_h3.jpg');
+}
+.header_title_img4{
+    background-image: url('/static/img/header/form_h4.jpg');
+}
+.header_title_img5{
+    background-image: url('/static/img/header/form_h5.jpg');
+}
+.header_title_img6{
+    background-image: url('/static/img/header/form_h6.jpg');
+}
+.header_title_img7{
+    background-image: url('/static/img/header/form_h7.jpg');
+}
+.header_title_img8{
+    background-image: url('/static/img/header/form_h8.jpg');
+}
+.header_title_img9{
+    background-image: url('/static/img/header/form_h9.jpg');
+}
+.header_title_img10{
+    background-image: url('/static/img/header/form_h10.jpg');
+}
+
+.header_title_img11{
+    background-image: url('/static/img/header/form_h11.jpg');
+}
+.header_title_img12{
+    background-image: url('/static/img/header/form_h12.jpg');
+}
+.header_title_img13{
+    background-image: url('/static/img/header/form_h13.jpg');
+}
+.header_title_img14{
+    background-image: url('/static/img/header/form_h14.jpg');
+}
+.header_title_img15{
+    background-image: url('/static/img/header/form_h15.jpg');
+}
+.header_title_img16{
+    background-image: url('/static/img/header/form_h16.jpg');
+}
+.header_title_img17{
+    background-image: url('/static/img/header/form_h17.jpg');
+}
+.header_title_img18{
+    background-image: url('/static/img/header/form_h18.jpg');
+}
+.header_title_img19{
+    background-image: url('/static/img/header/form_h19.jpg');
+}
+.header_title_img20{
+    background-image: url('/static/img/header/form_h20.jpg');
+}
+
+.header_title_img21{
+    background-image: url('/static/img/header/form_h21.jpg');
+}
+.header_title_img22{
+    background-image: url('/static/img/header/form_h22.jpg');
+}
+.header_title_img23{
+    background-image: url('/static/img/header/form_h23.jpg');
+}
+.header_title_img24{
+    background-image: url('/static/img/header/form_h24.jpg');
+}
+.header_title_img25{
+    background-image: url('/static/img/header/form_h25.jpg');
+}
+
+
+
+.header_title_text{
+    font-weight: bold;
+    line-height: normal;
+    font-size: larger;
+    text-shadow: 0px 0px 9px black;
+}
+.fields_box_center_par{
+    padding:0 7px
+}
+.fields_box_div{
+    padding: 10px 0px;
+    float: none;
+    background-color: #f9f7f7;
+    box-shadow: rgba(40, 58, 144, 0.15) 0px 4px 15px;
+    border-radius: 8px;
+    margin-top: -60px;
+}
