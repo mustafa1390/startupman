@@ -1,6 +1,7 @@
 <?php
 
 use Morilog\Jalali\Jalalian;
+use App\Models\Authentication;
 use Illuminate\Support\Facades\Route;
 
 if(!function_exists('isActive'))
@@ -163,5 +164,23 @@ if(! function_exists('date_frmat') ) {
     }
 
 }
+
+
+if(! function_exists('count_auth') ) {
+    function count_auth($user , $authentication)
+    {
+        if($authentication){
+
+        }else{
+             Authentication::create([ 'user_id' =>$user->id , 'email' =>$user->email ,
+            'tell' => $user->tell   ]);
+        }
+        $authentication=  $user->authentication;
+        return $authentication;
+    }
+
+}
+
+
 
 
