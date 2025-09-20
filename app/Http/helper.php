@@ -3,6 +3,7 @@
 use Morilog\Jalali\Jalalian;
 use App\Models\Authentication;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
 
 if(!function_exists('isActive'))
 {
@@ -179,6 +180,66 @@ if(! function_exists('count_auth') ) {
         return $authentication;
     }
 
+}
+
+
+
+
+
+if(! function_exists('validate_empty') ) {
+    function validate_empty( $authentication , $name  )
+    {
+
+       // dd($authentication);
+        // $random = Str::random(5);
+
+        $random =  random_int(99999,999999);
+
+
+        if($name=='email'){
+            $quer= $authentication->user->email;
+            $authentication->update([ 'email_code_verify' => $random ]);
+            Alert::success('با موفقیت ارسال شد', 'کد وریفای با موفقیت به ایمیل شما ارسال شد');
+        }
+
+
+        if($name=='tell'){
+            $quer= $authentication->user->tell;
+            $authentication->update([ 'tell_code_verify' => $random ]);
+            Alert::success('با موفقیت ارسال شد', 'کد وریفای با موفقیت به شماره همراه شما ارسال شد');
+        }
+
+
+        if($name=='tells'){
+            $quer= $authentication->user->tells;
+            $authentication->update([ 'tells_code_verify' => $random ]);
+            Alert::success('با موفقیت ارسال شد', 'کد وریفای با موفقیت به تلفن ثابت شما ارسال شد');
+        }
+
+
+
+        if($quer!=""){
+
+        }else{
+
+
+
+            if($name=='email'){
+                Alert::error('ایمیل کاربر نمی تواند خالی باشد      ', '  ایمیل کاربر انتخاب نشده است      ');  }
+
+            if($name=='tell'){
+                Alert::error('شماره همراه کاربر نمی تواند خالی باشد      ', '  شماره همراه کاربر انتخاب نشده است      '); }
+
+            if($name=='tells'){
+                Alert::error('شماره تلفن ثابت نمی تواند خالی باشد      ', '  شماره تلفن ثابت انتخاب نشده است      '); }
+
+            return back();
+
+        }
+
+
+
+    }
 }
 
 

@@ -20,11 +20,11 @@ class User extends Authenticatable
         'tell',
         'email',
         'password',
+        'remember_token',
     ];
 
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     public function authentication()

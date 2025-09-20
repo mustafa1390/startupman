@@ -163,8 +163,8 @@ class RegisterController extends BaseController
             $user = User::where([ ['tell',$request->tell] ])->first();
 
             validate_empty($authentication , 'tell');
-            $notif=notif_array( 'inactive','active','active' );
-            send_notification_all($user,'validation_login', null , $notif );
+            // $notif=notif_array( 'inactive','active','active' );
+            // send_notification_all($user,'validation_login', null , $notif );
 
             return new AuthverifyResource($user);
 
