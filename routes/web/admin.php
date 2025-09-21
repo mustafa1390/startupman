@@ -3,7 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\AdminController; 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PermissionRoleController;
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
@@ -23,3 +24,25 @@ Route::prefix('user')
     Route::get('/{id}/login', [UserController::class, 'login'])->name('login');
 
 });
+
+
+
+            Route::prefix('permission')->name('permission.')->group(function () {
+
+                Route::get('/create_permission', [PermissionRoleController::class, 'create'])->name('create');
+                Route::get('/index_permission', [PermissionRoleController::class, 'index'])->name('index');
+                Route::post('/', [PermissionRoleController::class, 'storepermission'])->name('store');
+                Route::get('/{id}/edit_permission', [PermissionRoleController::class, 'editpermission'])->name('edit');
+                Route::put('/{id}', [PermissionRoleController::class, 'updatepermission'])->name('update');
+                Route::get('/{id}/appointment', [PermissionRoleController::class, 'appointment'])->name('appointment');
+                Route::put('/{id}/appointment', [PermissionRoleController::class, 'appointment_put'])->name('appointment.put');
+                Route::delete('/{id}/delete', [PermissionRoleController::class, 'destroy'])->name('destroy');
+
+                Route::get('/{id}/duplicate', [PermissionRoleController::class, 'duplicate'])->name('duplicate');
+
+
+            //     Route::put('/{id}/status', [PermissionRoleController::class, 'status'])->name('status');
+
+                // Route::get('/{id}', [PermissionRoleController::class, 'show'])->name('show');
+
+            });
