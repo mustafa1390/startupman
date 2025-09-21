@@ -8,12 +8,10 @@
                         alt="profile cover">
                 </figure>
                 <div class="cover-body d-flex justify-content-between align-items-center">
-<div>
-    @template('tx')
+<div> 
     @include('admin.layouts.table.avatar', [$admin , 'avatarimage' => $admin->image , 'class'=>'profile-pic' , 'style' => 'height: 100px;width: 100px;'  ])
 
     <span class="profile-name">{{ $admin->name }}
-    @endtemplate
 
 
 

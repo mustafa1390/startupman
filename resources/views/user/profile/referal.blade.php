@@ -10,9 +10,7 @@
 
                                               @if ($admin->contacts)
 
-                                              <table
-@template('tx') id="dataTableExample" class="table" @endtemplate
-@template('arzicoin') id="example" class="table table-striped nowrap"  @endtemplate
+                                              <table class="table"  
 >
                                                   <thead>
                                                       <tr>

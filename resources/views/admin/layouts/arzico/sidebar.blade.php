@@ -1,6 +1,4 @@
 
-@template('arzicoin')
-
 <div class="dlabnav follow-info">
 	<div class="feature-box">
 		<div class="wallet-box">
@@ -252,7 +250,7 @@
 
         @endpermission
 
- 
+
         @permission('fiinical')
 
         <li class=" {{ isMmActive(['admin.wallet.create' , 'admin.wallet.index','admin.wallet.edit'])}} "  id="myli_wallet"  onclick="setActive('wallet')">
@@ -381,5 +379,4 @@
 		</div>
 	</div>
 </div>
-
-@endtemplate
+ 
