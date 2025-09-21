@@ -42,7 +42,7 @@
               </ul>
             </div>
           </li>
-
+{{-- 
 
         <li class="nav-item  {{ isActive(['admin.lottery.create' , 'admin.lottery.index'])}}   ">
             <a class="nav-link" data-toggle="collapse" href="#lottery" role="button" aria-expanded="false" aria-controls="lottery">
@@ -60,7 +60,7 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> --}}
 
 
         {{-- <li class="nav-item  {{ isActive(['admin.admin.create' , 'admin.admin.index','admin.admin.edit'])}}   ">
