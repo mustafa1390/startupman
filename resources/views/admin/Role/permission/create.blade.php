@@ -49,7 +49,7 @@
 
 
                                           <div class="card-footer">
-                                              <a href="{{ route('admin.page.index') }}" class="btn btn-danger">بازگشت</a>
+                                              <a href="#" class="btn btn-danger">بازگشت</a>
                                               <button type="submit" class="btn btn-primary float-right">ایجاد نقش کاربری جدید</button>
                                           </div>
 

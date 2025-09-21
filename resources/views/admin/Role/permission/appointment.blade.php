@@ -1,7 +1,7 @@
   @component('admin.layouts.content', [
       'title' => 'انتصاب مدیر به نقش ',
       'tabTitle' => 'انتصاب مدیر به نقش ',
-      'breadcrumb' => [['title' => 'لیست صفحات سایت', 'url' => route('admin.page.index')], ['title' => 'ویرایش صفحه  ',
+      'breadcrumb' => [['title' => 'لیست صفحات سایت', 'url' => '#'], ['title' => 'ویرایش صفحه  ',
       'class' => 'active']],
       ])
 

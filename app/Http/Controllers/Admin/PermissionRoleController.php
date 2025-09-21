@@ -128,6 +128,7 @@ class PermissionRoleController extends Controller
 
         $permission_roles = PermissionRole::where([ ['role_id' , $id], ])->get();
         $users = Admin::where([ ['id' , '<>' , '0'] ])->orderBy('id', 'desc')->get();
+        // dd('hi');
         return view('admin.Role.permission.appointment' , compact(['permissions' ,  'role'  ,
         'permission_roles' , 'users'  ]));
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Auth\AdminAuthController;
@@ -11,6 +12,9 @@ use App\Http\Controllers\Auth\AdminAuthController;
 // });
 // Route::get('/{any}', [IndexController::class, 'index'])->where('any', '.*')->name('vuepanel');
 // Route::get('/demo', [IndexController::class, 'demo'])->name('demo');
+
+
+Route::post('/items/{id}/status', [ItemController::class, 'updateStatus']);
 
 
 Route::controller(RegisterController::class)->group(function(){

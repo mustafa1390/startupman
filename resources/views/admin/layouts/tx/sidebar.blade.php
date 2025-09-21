@@ -25,6 +25,76 @@
 
 
 
+          <li class="nav-item nav-category">مدیریت اطلاع رسانی </li>
+
+          <li class="nav-item  {{ isActive([  'admin.notification.list.index', 'admin.notification.list.edit' , 'admin.notification.list.type' , 'admin.notification.email.index'])}}  ">
+            <a class="nav-link" data-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">اطلاع رسانی   </span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse  {{ isShow([  'admin.notification.list.index' , 'admin.notification.list.edit' , 'admin.notification.list.type' ,'admin.notification.email.index'])}}   "  id="notification">
+              <ul class="nav sub-menu">
+
+                <li class="nav-item">
+ <a href="{{ route('admin.notification.list.index') }}" class="nav-link   {{ isActive(['admin.notification.list.index' , 'admin.notification.list.edit' , 'admin.notification.list.type' ]) }}  "> مدیریت متنهای پیش فرض </a>
+                </li>
+                <li class="nav-item">
+ <a href="{{ route('admin.notification.email.index') }}" class="nav-link   {{ isActive(['admin.notification.email.index' ]) }}  ">   تنظیمات ایمیل مدیر </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+
+        <li class="nav-item  {{ isActive(['admin.admin.create' , 'admin.admin.index','admin.admin.edit'])}}   ">
+            <a class="nav-link" data-toggle="collapse" href="#admin" role="button" aria-expanded="false" aria-controls="admin">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">مدیریت ادمین ها</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse  {{ isShow(['admin.admin.create' , 'admin.admin.index','admin.admin.edit'])}}     "  id="admin">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+ <a href="{{ route('admin.admin.create') }}" class="nav-link   {{ isActive(['admin.admin.create']) }}  ">ثبت ادمین </a>
+                </li>
+                <li class="nav-item">
+ <a href="{{ route('admin.admin.index') }}" class="nav-link   {{ isActive(['admin.admin.index','admin.admin.edit']) }}  ">مشاهده ادمین ها</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+<li class="nav-item  {{ isActive(['admin.permission.create' , 'admin.permission.index',
+          'admin.permission.edit' ,    'admin.permission.appointment' , ])}}">
+            <a class="nav-link" data-toggle="collapse" href="#permission" role="button" aria-expanded="false" aria-controls="permission">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">سطوح دسترسی  </span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse  {{ isShow(['admin.permission.create' , 'admin.permission.index',
+            'admin.permission.edit' ,    'admin.permission.appointment' , ])}}     "  id="permission">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+ <a href="{{route('admin.permission.create')}}" class="nav-link  {{ isActive(['admin.permission.create' ])}} "> ایجاد نقش جدید</a>
+                </li>
+                <li class="nav-item">
+ <a href="{{route('admin.permission.index')}}" class="nav-link  {{ isActive(['admin.permission.index','admin.permission.edit',    'admin.permission.appointment' , ])}} ">مدیریت نقش ها  </a>
+                </li>
+
+
+              </ul>
+            </div>
+          </li>
+
+
+        @permission('content')
+                  <li class="nav-item nav-category">پشتیبانی Test</li>
+        @endpermission
+
+
         <li class="nav-item  {{ isActive(['admin.user.create' , 'admin.user.index'])}}   ">
             <a class="nav-link" data-toggle="collapse" href="#user" role="button" aria-expanded="false" aria-controls="user">
               <i class="link-icon" data-feather="list"></i>
@@ -42,7 +112,7 @@
               </ul>
             </div>
           </li>
-{{-- 
+{{--
 
         <li class="nav-item  {{ isActive(['admin.lottery.create' , 'admin.lottery.index'])}}   ">
             <a class="nav-link" data-toggle="collapse" href="#lottery" role="button" aria-expanded="false" aria-controls="lottery">

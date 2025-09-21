@@ -5,8 +5,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PermissionRoleController;
+use App\Http\Controllers\Notification\NotificationListController;
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+
+Route::prefix('admin')
+->name('admin.')->group(function () {
+    Route::get('/create_admin', [AdminController::class, 'create'])->name('create');
+    Route::put('/create', [AdminController::class, 'store'])->name('store');
+    Route::get('/index_admin', [AdminController::class, 'index_admin'])->name('index');
+    Route::get('/{admin}/edit_admin/{tab_active?}', [AdminController::class, 'edit'])->name('edit');
+    Route::put('/{admin}', [AdminController::class, 'update'])->name('update');
+    Route::put('/{admin}/secret_admin', [AdminController::class, 'secret'])->name('secret');
+    Route::delete('/{id}', [AdminController::class, 'destroy'])->name('destroy');
+    Route::put('/{id}/status/{tab_active?}', [AdminController::class, 'status'])->name('status');
+
+});
 
 
 Route::prefix('user')
@@ -46,3 +61,30 @@ Route::prefix('user')
                 // Route::get('/{id}', [PermissionRoleController::class, 'show'])->name('show');
 
             });
+
+
+
+
+Route::prefix('notification')->name('notification.')->group(function () {
+
+
+    Route::prefix('list')
+    ->name('list.')->group(function () {
+        Route::get('/index', [NotificationListController::class, 'index'])->name('index');
+        Route::get('/{id}/type', [NotificationListController::class, 'type'])->name('type');
+        Route::get('/{id}/type/edit', [NotificationListController::class, 'edit'])->name('edit');
+        Route::put('/{id}/type/update', [NotificationListController::class, 'update'])->name('update');
+        Route::put('/{id}/status', [NotificationListController::class, 'status'])->name('status');
+
+     });
+
+
+    Route::prefix('email')
+    ->name('email.')->group(function () {
+        Route::get('/index', [NotificationListController::class, 'email_index'])->name('index');
+        Route::put('/index', [NotificationListController::class, 'email_index_update'])->name('email_index_update');
+    });
+
+
+});
+

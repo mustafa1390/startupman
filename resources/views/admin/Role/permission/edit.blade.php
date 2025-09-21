@@ -1,7 +1,7 @@
   @component('admin.layouts.content', [
       'title' => 'ویرایش صفحه',
       'tabTitle' => ' ویرایش صفحه',
-      'breadcrumb' => [['title' => 'لیست صفحات سایت', 'url' => route('admin.page.index')], ['title' => 'ویرایش صفحه  ',
+      'breadcrumb' => [['title' => 'لیست صفحات سایت', 'url' => '#'], ['title' => 'ویرایش صفحه  ',
       'class' => 'active']],
       ])
 
