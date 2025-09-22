@@ -103,9 +103,9 @@
             </a>
             <div class="collapse  {{ isShow(['admin.user.create' , 'admin.user.index'])}}     "  id="user">
               <ul class="nav sub-menu">
-                {{-- <li class="nav-item">
+                <li class="nav-item">
  <a href="{{ route('admin.user.create') }}" class="nav-link   {{ isActive(['admin.user.create']) }}  ">ثبت کاربر </a>
-                </li> --}}
+                </li>
                 <li class="nav-item">
  <a href="{{ route('admin.user.index') }}" class="nav-link   {{ isActive(['admin.user.index','admin.user.edit']) }}  ">مشاهده کاربران</a>
                 </li>

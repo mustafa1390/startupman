@@ -59,7 +59,6 @@ return view('admin.user.index' , compact(['users'  ]));
     {
         $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:users,username,$request->username',
             'email' => 'required|unique:users,email,$request->email',
             'password' => 'required| min:4 |confirmed',
             'password_confirmation' => 'required| min:4'
@@ -68,7 +67,6 @@ return view('admin.user.index' , compact(['users'  ]));
 
         User::create([
             'name' => $request->name,
-            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password) ,
         ]);
@@ -103,9 +101,14 @@ return view('admin.user.index' , compact(['users'  ]));
 
 
         $admin = $user;
-        $tab_active = 'profile';
 
-        return view('admin.user.edit' , compact([ 'admin' , 'tab_active' ]) );
+        $authentication= Authentication::where([ ['user_id' , '=' , $user->id  ], ])->orderby('id','desc')->first();
+        $authentication=  count_auth($user,$authentication);
+
+        $tab_active = 'profile';
+        $loginhistories = null;
+
+        return view('admin.user.edit' , compact([ 'admin' , 'tab_active' , 'loginhistories' ]) );
     }
 
     /**

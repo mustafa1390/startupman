@@ -67,12 +67,12 @@
                                         </div>
 
 
-                                        {{-- <div class="form-group">
+                                        <div class="form-group">
                                             <label for="exampleInputUsername1">نام کاربری</label>
                                             <input type="text" class="form-control" id="exampleInputUsername1"
                                                 autocomplete="off" placeholder="نام کاربری" name="username"
                                                 value="{{ old('username') }}"  >
-                                        </div> --}}
+                                        </div>
 
 
                                         <div class="form-group">
