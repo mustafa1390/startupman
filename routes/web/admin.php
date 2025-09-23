@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BusinesGroupController;
 use App\Http\Controllers\Admin\PermissionRoleController;
 use App\Http\Controllers\Notification\NotificationListController;
 
@@ -23,6 +24,15 @@ Route::prefix('admin')
 
 });
 
+
+Route::prefix('busines_groups')
+->name('busines_groups.')->group(function () {
+    Route::get('/create_busines_groups', [BusinesGroupController::class, 'create'])->name('create');
+    Route::post('/store', [BusinesGroupController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [BusinesGroupController::class, 'edit'])->name('edit');
+    Route::get('/index', [BusinesGroupController::class, 'index'])->name('index');
+
+});
 
 Route::prefix('user')
 ->name('user.')->group(function () {

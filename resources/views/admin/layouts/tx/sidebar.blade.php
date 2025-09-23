@@ -112,6 +112,24 @@
               </ul>
             </div>
           </li>
+
+          <li class="nav-item  {{ isActive(['admin.busines_groups.create' , 'admin.busines_groups.index'])}}   ">
+            <a class="nav-link" data-toggle="collapse" href="#busines_groups" role="button" aria-expanded="false" aria-controls="busines_groups">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">  دسته بندی بیزینس </span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse  {{ isShow(['admin.busines_groups.create' , 'admin.busines_groups.index'])}}     "  id="busines_groups">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+ <a href="{{ route('admin.busines_groups.create') }}" class="nav-link   {{ isActive(['admin.busines_groups.create']) }}  ">ثبت دسته بندی </a>
+                </li>
+                <li class="nav-item">
+ <a href="{{ route('admin.busines_groups.index') }}" class="nav-link   {{ isActive(['admin.busines_groups.index','admin.busines_groups.edit']) }}  ">مشاهده دسته بندی ها</a>
+                </li>
+              </ul>
+            </div>
+          </li>
 {{--
 
         <li class="nav-item  {{ isActive(['admin.lottery.create' , 'admin.lottery.index'])}}   ">
