@@ -1,8 +1,8 @@
 <template>
     <div>
       <nav>
-        <router-link to="/">ثبت نام</router-link> |
-        <router-link to="/login">ورود</router-link>
+        <router-link to="/"> {{ $t("signup") }}</router-link> |
+         <router-link   class="text-primary"   :to="{ name: 'login' }"> {{ $t("login") }}</router-link>
       </nav>
       <router-view  :key="$route.path"  />
     </div>
