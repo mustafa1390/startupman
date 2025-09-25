@@ -11,15 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" href="">
         <link rel="shortcut icon" type="image/png" href="">
-        <title>
-            سفارش ثبت نام همایش پیاده روی خانواده به صورت همایش پیاده روی        </title>
+        <title> استارتاپ من</title>
 
-        <meta property="og:title" content="سفارش ثبت نام همایش پیاده روی خانواده به صورت همایش پیاده روی">
+        <meta property="og:title"  content="استارتاپ من">
 
         <meta property="og:image" content="">
         <meta property="og:description" content="">
         <meta property="description" content="">
-        <meta property="og:site_name" content="همایش پیاده روی">
+        <meta property="og:site_name" content="استارتاپ من">
         <meta property="og:type" content="website">
         <meta property="og:url" content="#">
         <meta property="og:site" content="#">
@@ -35,7 +34,7 @@
         <meta name="language" content="Farsi">
         <meta name="url" content="#">
 
-        <meta property="article:tag" content="ایجاد فرم ثبت نام">
+        <meta property="article:tag" content="استارتاپ من">
 
         <meta name="twitter:card" content="summary">
         <meta name="twitter:url" content="#">
