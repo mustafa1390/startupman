@@ -1,8 +1,10 @@
 <template>
+<notifications group="auth"  position="top left" />
+<notifications group="app"   position="top left"  />
 
+ <vue3-progress />
 
-<vue3-progress />
-      <router-view  :key="$route.path"  />
+    <router-view  :key="$route.path"  />
   </template>
 
 <script>

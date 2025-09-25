@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Api\ProfileController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,5 +28,18 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('auth/checked_codeverify', 'checked_codeverify');
 
 });
+
+
+Route::middleware('auth:sanctum')->group( function () {
+
+    Route::get('/user/codeverify', [ProfileController::class, 'user_codeverify']);
+    Route::post('/user/checked_codeverify', [ProfileController::class, 'checked_codeverify']);
+    Route::post('/user/create_codeverify', [ProfileController::class, 'create_codeverify']);
+    Route::post('/user/checked_codeverify_email', [ProfileController::class, 'checked_codeverify_email']);
+    Route::post('/user/checked_active_codmelli', [ProfileController::class, 'checked_active_codmelli']);
+
+});
+
+
 
 

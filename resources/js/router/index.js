@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/components/Registeri.vue';
 import Login from '@/views/Auth/Login.vue';
+import Register from '@/views/Auth/Register.vue';
+import Codeverify from '@/views/Auth/Codeverify.vue';
+// import Login from '@/components/Login.vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { useAuthStore } from '@/stores/auth.js';
+import AuthLayout from '@/layouts/AuthLayout.vue';
 
 
 const routes = [
@@ -11,11 +15,20 @@ const routes = [
     component: DefaultLayout,
         children: [
             { path: '', component: Home ,name: 'home' },
-            // { path: '/login', component: Login ,name: 'login' },
-            { path: 'client/:lang/auth/login',  component: Login, name: 'login', },
 
         ]
     },
+
+      {
+    path:'/',  name: 'auth', component: AuthLayout,
+    children: [
+        { path: 'client/:lang/auth/login',  component: Login, name: 'login', },
+        { path: 'client/:lang/auth/register',  component: Register, name: 'register',  },
+        { path: 'client/:lang/auth/codeverify', component: Codeverify, name: 'codeverify', }
+
+
+    ]
+  },
 
 
 ];

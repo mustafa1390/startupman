@@ -3,20 +3,31 @@
 
 
 
-            <form @submit.prevent="handleLogin" method="post"  >
+            <form @submit.prevent="handleRegister" method="post"  >
 
                 <div class="text-center mb-4">
-                  <h3 class="text-center mb-2 text-dark">{{$t("User_login")}}</h3>
+                  <h3 class="text-center mb-2 text-dark">{{$t("signup")}}</h3>
                 </div>
 
-              <div class="sepertor">
-                <span class="d-block mb-4 fs-13">&nbsp; </span>
+
+
+            <div class="mb-3">
+                <label
+                  for="fullname"
+                  class="form-label"
+                  >{{$t("fullname")}}</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullname"
+                  v-model="fullname"
+                  required
+                />
               </div>
 
-
-
     <div class="mb-3">
-    <label class="form-label">{{$t("Mobile-number-email")}}<span v-if="!isValid" style="color: red;">* {{$t("Invalid_mobile_number")}}</span>
+    <label class="form-label">{{$t("mobile_phone")}}<span v-if="!isValid" style="color: red;">* {{$t("Invalid_mobile_number")}}</span>
     </label>
       <input
         class="form-control"
@@ -26,16 +37,36 @@
         @input="checkMobileNumber"
     inputmode="numeric"
     pattern="[0-9]*"
+        required
       />
-              </div>
+    </div>
 
 
               <div class="mb-3 position-relative">
                 <label class="form-label">{{$t("password")}}</label>
                 <input
-                  type="password"
-                  id="password"
-                  v-model="password"
+
+          type="password"
+          id="password"
+          v-model="password"
+          required
+                  class="form-control"
+                  value=""
+                />
+                <span class="show-pass eye">
+                  <i class="fa fa-eye-slash"></i>
+                  <i class="fa fa-eye"></i>
+                </span>
+              </div>
+
+              <div class="mb-3 position-relative">
+                <label class="form-label">{{$t("password-again")}}</label>
+                <input
+
+            type="password"
+          id="confirmPassword"
+          v-model="confirmPassword"
+          required
                   class="form-control"
                   value=""
                 />
@@ -46,42 +77,42 @@
               </div>
 
 
-              <div class="form-row d-flex justify-content-between mt-4 mb-2">
-									<div class="mb-4">
-										<router-link :to="{ name: 'forgetpass' }"  class="btn-link text-primary">
-                                        {{ $t("forgot_password") }}
-                                        </router-link>
-									</div>
-								</div>
+      <div v-if="passwordError" class="error">
+        {{ $t("password_does_not_match") }}
+      </div>
+
+      <div v-if="passwordError6" class="error">
+        {{ $t("Password6characters") }}
+      </div>
 
               <button type="submit" class="btn btn-block btn-primary"  :disabled="loading">
-                <p v-if="loading"> {{ $t("Entering") }} </p>
+                <p v-if="loading"> </p>
 
   <div v-if="loading" class="spinner"></div>
   <div v-else>
-    {{ $t("Sign_in") }}
+    {{ $t("signup") }}
   </div> </button>
 
 
 
 
- 
+
 
             </form>
 
+            <div class="new-account mt-3 text-center">
+			<p class="font-w500"> {{ $t("already_have_account") }}
+                <router-link   class="text-primary"   :to="{ name: 'login' }">
+                    {{ $t("login") }}
+                </router-link>
+            </p>
+			</div>
 
 
 
+ 
 
 
-    <!-- <div class="login-page">
-      <h1>Login</h1>
-      <form @submit.prevent="handleLogin">
-        <input v-model="email" type="email" placeholder="Email" required />
-        <input v-model="password" type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
-    </div> -->
   </template>
 
 <style>
@@ -167,6 +198,9 @@ import { useNotification } from '@kyvg/vue3-notification';
 import swal from 'sweetalert';
 
 
+import { getRegister } from '@/services/auth/register.js';
+
+
 
   export default {
     setup() {
@@ -176,11 +210,7 @@ import swal from 'sweetalert';
     const success = () => {
       notify({
         title: t('success'),
-        text: t('forgot-password'), // You can use a different key if needed
-        type: 'success',
-        // type: 'warn',
-        // type: 'info',
-        // type: 'error',
+        text: t('forgot-password'),
         group: 'app'
       });
     };
@@ -188,10 +218,7 @@ import swal from 'sweetalert';
       notify({
         title: t('Entering'),
         text: '......',
-        // type: 'success',
-        // type: 'warn',
         type: 'info',
-        // type: 'error',
         group: 'auth',
         duration: 1000,
 
@@ -199,16 +226,21 @@ import swal from 'sweetalert';
     };
 
     const errori = () => {
-
-
       notify({
         title: t('Error'),
-        text: t('Login_information_is_invalid'), // You can use a different key if needed
-        // type: 'success',
-        // type: 'warn',
-        // type: 'info',
+        text: t('Login_information_is_invalid'),
         type: 'error',
         group: 'app'
+      });
+    };
+
+    const validuser = () => {
+      notify({
+        title: t('Error'),
+        text: t('already_been_registered'),
+        type: 'warn',
+        group: 'app',
+        duration: 6000,
       });
     };
 
@@ -217,60 +249,89 @@ import swal from 'sweetalert';
       showNotification,
       errori,
       success,
+      validuser,
     };
   },
 
-  computed: {
-    windowLocation() {
-      return window.location.origin;
-    }
-  },
     methods: {
-
 
     checkMobileNumber() {
       const iranMobileRegex = /^(\+98|0)?9\d{9}$/;
       this.isValid = iranMobileRegex.test(this.tell);
     },
-    handleLogin() {
-      if (this.isValid) {
-        alert('Form submitted successfully');
+
+        async handleRegister() {
+
+      if (this.password !== this.confirmPassword) {
+        this.passwordError = true;
       } else {
-        alert('Please enter a valid mobile number');
+        this.passwordError = false;
       }
-    },
 
 
-        async handleLogin() {
-            this.loading = true;
+      if (this.password.length < 6) {
+        this.passwordError6 = true;
+      } else {
+        this.passwordError6 = false;
+      }
+
+
+
+   this.loading = true;
 
    this.showNotification();
 
+   if ((this.isValid)&&(this.password === this.confirmPassword)&&(this.password !== null)
+   &&(this.fullname !== null)&&(this.password.length > 5)) {
 
-            try {
+    try {
       const credentials = {
+        name: fullname.value,
         tell: tell.value,
         password: password.value,
       };
 
-  const authStore = useAuthStore();
 
-    await authStore.login(credentials);
+      var response = await getRegister(credentials);
+        this.myus = response;
+        if(this.myus.status === 401){
+            this.validuser();
+            this.$router.push({ name: 'login'  });
+
+        }else if(this.myus.status === 200){
+
+
+
+      const credentials_login = {
+        tell: tell.value,
+        password: password.value,
+      };
+      console.log(credentials_login);
+      const authStore = useAuthStore();
+        await authStore.login(credentials_login);
+   this.success();
+        }
+
+
    this.success();
     } catch (error) {
         this.loading = false;
-
-// this.$notify({
-//   title:   t('Entering') ,
-//   text: "Hello user!",
-// });
-
    this.errori();
-
-        // swal("اطلاعات ورود نامعتبر می باشد", "لطفا نام کاربری و رمزعبور را به صورت صحیح وارد نمایید", "error");
-      console.error('Login failed', error);
+       console.error('Login failed', error);
       console.log('Erroriman');
     }
+
+   }else{
+
+
+    this.loading = false;
+    console.log('eshhhtt');
+    this.errori();
+
+
+   }
+
+
         }
     },
 
@@ -280,7 +341,13 @@ import swal from 'sweetalert';
       loading: false, // To indicate the submission state
 
       tell: '',
+      fullname: '',
       isValid: true,
+
+      password: '',
+      confirmPassword: '',
+      passwordError: false,
+      passwordError6: false,
     };
   },
   mounted() {
@@ -310,5 +377,14 @@ import swal from 'sweetalert';
   to {
     transform: rotate(360deg);
   }
+}
+</style>
+
+
+
+<style scoped>
+.error {
+  color: red;
+  margin-top: 5px;
 }
 </style>
