@@ -1,11 +1,13 @@
 <?php
 
+use App\Models\LogUser;
 use App\Models\Role\Role;
 use Illuminate\Support\Str;
 use Morilog\Jalali\Jalalian;
 use App\Models\Authentication;
 use App\Models\Role\Permission;
 use App\Models\Role\PermissionRole;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Role\PermissionAccesse;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -644,6 +646,55 @@ $collection = Str::of($route_cleander)->explode('.');
 return $collection[$array];
 
 
+
+    }
+}
+
+if(! function_exists('create_visitors') ) {
+    function create_visitors($request,$any)
+    {
+
+        // dd($request);
+        // $deleted = Visitor::where([ ['id','<>',0] ])->delete();
+        $prev  = 0;
+
+        // $device=   request()->header('User-Agent');
+        // dd(URL::previous());
+        // $ip = request()->ip();
+        // $url = request()->url();
+        // if(URL::previous()){
+        //     $perv = URL::previous();
+        // }
+
+
+
+$url = $request->url();
+$ip = $request->ip();
+$prev = url()->previous();
+$device = $_SERVER['HTTP_USER_AGENT'];
+
+        $name = explode_url('0');
+        $data['ip']  = $ip;
+        $data['url']  = $url;
+        $data['prev']  = $prev;
+        $data['agents']  = $device;
+        $data['name']  = $name;
+        $data['act']  = $any;
+
+$text = $prev;
+$count = 0;
+str_replace("/payment?form=", "#", $text, $count);
+if($count > 0){ $data['redirect']  = 1; }
+
+
+$user = Auth::guard('user')->user();
+
+if($user){
+     $data['user_id']  = $user->id;
+}
+
+
+    LogUser::create($data);
 
     }
 }
