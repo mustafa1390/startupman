@@ -8,28 +8,73 @@
                                     <h6 class="mb-0 text-600">صفحه ورود شما جز کدام دسته می باشد؟</h6>
 
               <div class="row g-3">
-                <div class="col-xxl-2 col-lg-2 col-md-4 col-sm-4">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+
+                <button class="btn btn-falcon-default btn-lg" type="button">
+                        <span class="d-none d-sm-inline">
+                        <div class="d-flex align-items-center rounded-3  "><img src="/falcon/public/assets/img/tickets/reports/1.png" alt="" width="39">
+                    <div class="ms-3 my-x1">
+                      <h5 class="fs-9 fw-semi-bold mb-2">
+                        <a class="text-900 hover-primary stretched-link"
+                        @click="dive(1)"  >کمپین مشترک</a></h5>
+                    </div>
+                  </div>
+                    </span>
+                </button>
+
+                <button class="btn btn-falcon-default btn-lg" type="button">
+                        <span class="d-none d-sm-inline">
+                        <div class="d-flex align-items-center rounded-3  "><img src="/falcon/public/assets/img/tickets/reports/2.png" alt="" width="39">
+                    <div class="ms-3 my-x1">
+                      <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link"
+                         @click="dive(2)"   >معرفی محصول</a></h5>
+                    </div>
+                  </div>
+                    </span>
+                </button>
+
+
+                <button class="btn btn-falcon-default btn-lg" type="button">
+                        <span class="d-none d-sm-inline">
+                        <div class="d-flex align-items-center rounded-3  "><img src="/falcon/public/assets/img/tickets/reports/2.png" alt="" width="39">
+                    <div class="ms-3 my-x1">
+                      <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link"
+                         @click="dive(3)"   >معرفی محصول</a></h5>
+                    </div>
+                  </div>
+                    </span>
+                </button>
+
+                </div>
+
+                </div>
+
+
+              <div class="row g-3">
+                <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-4">
                   <div class="d-flex align-items-center px-4 py-x1 bg-body-tertiary rounded-3 border position-relative"><img src="/falcon/public/assets/img/tickets/reports/1.png" alt="" width="39">
                     <div class="ms-3 my-x1">
                       <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link" href="#!">کمپین مشترک</a></h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-xxl-2 col-lg-2 col-md-4 col-sm-4">
+                <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-4">
                   <div class="d-flex align-items-center px-4 py-x1 bg-body-tertiary rounded-3 border position-relative"><img src="/falcon/public/assets/img/tickets/reports/2.png" alt="" width="39">
                     <div class="ms-3 my-x1">
-                      <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link" href="#bottom-section"  @click="dive" >خبرنامه ایمیلی</a></h5>
+                      <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link"  >خبرنامه ایمیلی</a></h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-xxl-2 col-lg-2 col-md-4 col-sm-4">
+                <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-4">
                   <div class="d-flex align-items-center px-4 py-x1 bg-body-tertiary rounded-3 border position-relative"><img src="/falcon/public/assets/img/tickets/reports/2.png" alt="" width="39">
                     <div class="ms-3 my-x1">
                       <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link" href="#!">معرفی محصول</a></h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-xxl-2 col-lg-2 col-md-4 col-sm-4">
+                <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-4">
                   <div class="d-flex align-items-center px-4 py-x1 bg-body-tertiary rounded-3 border position-relative"><img src="/falcon/public/assets/img/tickets/reports/2.png" alt="" width="39">
                     <div class="ms-3 my-x1">
                       <h5 class="fs-9 fw-semi-bold mb-2"><a class="text-900 hover-primary stretched-link" href="#!">  معرفی کتاب  </a></h5>
@@ -502,7 +547,7 @@
 export default {
   name: "DiveExample",
   methods: {
-    dive() {
+    dive(m) {
       // Option 1: Scroll to a specific element by ID
       const section = document.getElementById("bottom-section");
       if (section) {
