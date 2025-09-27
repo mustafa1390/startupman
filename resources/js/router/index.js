@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/components/Registeri.vue';
+// import Home from '@/components/Registeri.vue';
 import Login from '@/views/Auth/Login.vue';
 import Register from '@/views/Auth/Register.vue';
 import Home from '@/views/Auth/Register.vue';
+import Dashboard from '@/views/User/Dashboard.vue';
 import Codeverify from '@/views/Auth/Codeverify.vue';
 // import Login from '@/components/Login.vue';
-import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import PanelLayout from '@/layouts/PanelLayout.vue';
 import { useAuthStore } from '@/stores/auth.js';
 import AuthLayout from '@/layouts/AuthLayout.vue';
 
@@ -13,10 +14,10 @@ import AuthLayout from '@/layouts/AuthLayout.vue';
 const routes = [
   {
     path: '/',
-    component: DefaultLayout,
+    component: PanelLayout,
         children: [
             // { path: '', component: Home ,name: 'home' },
-            { path: 'panel/user/:lang/dashboard', component: Home ,name: 'dashboard' },
+            { path: 'panel/user/:lang/dashboard', component: Dashboard ,name: 'dashboard' },
 
         ]
     },
