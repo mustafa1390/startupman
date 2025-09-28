@@ -10,11 +10,13 @@ use App\Http\Requests;
 use App\Models\Setting;
 use App\Models\Txtdese;
 use App\Models\Role\Role;
+use App\Models\SectionUser;
 use Illuminate\Http\Request;
+use App\Models\SectionPublic;
 use App\Models\Eform\Currency;
+
 use App\Models\Eform\PriceFee;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
@@ -90,8 +92,30 @@ return redirect()->route('admin.dashboard');
         // $setting=Setting::find(1);
 
         // return view('auth.admin.login');
-        return view('user1.dashboard');
-        // return view('admin.auth.login', compact([ 'setting'  ]) );
+        // return view('user1.dashboard');
+
+
+
+
+$records = SectionUser::onlySections()->get();
+// Get all SectionUser for a LandingPage = 10 where sectionable_type = Section
+$records = SectionUser::onlySections()->forLandingPage(10)->get();
+// Get the actual Section model from SectionUser
+$su = SectionUser::first();
+$section = $su->sectionable; // instance of App\Models\Section
+
+
+
+// fetch section from SectionUser
+
+$sectionPublic = SectionPublic::find(3);
+$sectionPublic->sectionUsers()->create(['user_id' => 1]);
+$sectionUser = SectionUser::find(3);
+$parent = $sectionUser->sectionable; // returns Section, SectionTemplate, or SectionPublic
+
+dd($parent);
+
+
     }
 
     /**

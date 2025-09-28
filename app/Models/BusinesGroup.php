@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\LandingPage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,4 +28,13 @@ class BusinesGroup extends Model
     {
         return $this->children()->with('childrenRecursive');
     }
+
+
+
+    public function landing_pages(){
+        return $this->hasMany(LandingPage::class , 'busines_group_id');
+    }
+
+
+
 }
