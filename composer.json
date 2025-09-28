@@ -30,7 +30,8 @@
         },
 
         "files": [
-            "app/Http/helper.php"
+            "app/Http/helper.php",
+            "app/Http/helper_landingpage.php"
         ]
     },
     "autoload-dev": {

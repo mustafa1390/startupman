@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BusinesGroupController;
 use App\Http\Controllers\Admin\PermissionRoleController;
+use App\Http\Controllers\Admin\SectionManageController;
 use App\Http\Controllers\Notification\NotificationListController;
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
@@ -31,6 +32,15 @@ Route::prefix('busines_groups')
     Route::post('/store', [BusinesGroupController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [BusinesGroupController::class, 'edit'])->name('edit');
     Route::get('/index', [BusinesGroupController::class, 'index'])->name('index');
+
+});
+
+Route::prefix('section')
+->name('section.')->group(function () {
+    // Route::get('/create_section', [SectionManageController::class, 'create'])->name('create');
+    // Route::post('/store', [SectionManageController::class, 'store'])->name('store');
+    // Route::get('/{id}/edit', [SectionManageController::class, 'edit'])->name('edit');
+    Route::get('/index', [SectionManageController::class, 'index'])->name('index');
 
 });
 
