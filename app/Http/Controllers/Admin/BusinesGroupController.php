@@ -13,6 +13,11 @@ class BusinesGroupController extends Controller
     {
         return view('admin.busines_groups.create' );
     }
+        public function create_sub()
+    {
+        $busines_groups  =    BusinesGroup::whereNull('parent_id')->get();
+        return view('admin.busines_groups.create_sub', compact(['busines_groups'    ]) );
+    }
 
 
       public function store(Request $request)
@@ -29,9 +34,26 @@ class BusinesGroupController extends Controller
         return redirect()->route('admin.busines_groups.index');
         }
 
+
+  public function update(Request $request , $id)
+      {
+
+        // dd($request);
+           $request->validate([
+              'name' => 'required',
+          ]);
+          $data = $request->all();
+
+          $busenes_group = BusinesGroup::find($id);
+          $busenes_group->update($data);
+
+        Alert::success('با موفقیت ویرایش شد', 'اطلاعات جدید با موفقیت ویرایش شد');
+        return redirect()->route('admin.busines_groups.index');
+        }
+
            public function index()
     {
-
+landing_model_v1('BusinesGroup');
         $busines_groups  =    BusinesGroup::orderby('id','desc')->get();
         $show_busines_group  =    BusinesGroup::whereNull('parent_id')->with('childrenRecursive')->get();
 

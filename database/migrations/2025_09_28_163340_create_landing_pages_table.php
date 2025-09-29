@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->default('landing page')->nullable();
             $table->string('code');
+            $table->integer('user_id');
             $table->string('priority')->nullable();
             $table->string('status')->default('inactive');
             $table->integer('busines_group_id');

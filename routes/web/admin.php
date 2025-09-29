@@ -29,9 +29,11 @@ Route::prefix('admin')
 Route::prefix('busines_groups')
 ->name('busines_groups.')->group(function () {
     Route::get('/create_busines_groups', [BusinesGroupController::class, 'create'])->name('create');
+    Route::get('/create_sub_busines_groups', [BusinesGroupController::class, 'create_sub'])->name('create.sub');
     Route::post('/store', [BusinesGroupController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [BusinesGroupController::class, 'edit'])->name('edit');
-    Route::get('/index', [BusinesGroupController::class, 'index'])->name('index');
+    Route::put('/{id}/update', [BusinesGroupController::class, 'update'])->name('update');
+    Route::get('/index_busines_groups', [BusinesGroupController::class, 'index'])->name('index');
 
 });
 

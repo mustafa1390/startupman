@@ -13,11 +13,23 @@ class SectionUser extends Model
     protected $fillable = ['user_id', 'sectionable_type', 'sectionable_id', 'landing_page_id', 'priority', 'status'];
 
 
+    protected $appends = [
+        'section_id' ,
+    ];
+
+
+
     public function sectionable()
     {
         return $this->morphTo();
     }
 
+
+  public function getSectionIdAttribute()
+{
+    // Safely return the related model's name if it exists
+    return $this->sectionable ? $this->sectionable->section_id : null;
+}
 
 
 

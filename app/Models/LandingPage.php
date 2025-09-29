@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LandingPage extends Model
 {
 
-    protected $fillable = ['name', 'status', 'busines_group_id', 'priority', 'code'];
+    protected $fillable = ['name', 'status', 'user_id', 'busines_group_id', 'priority', 'code'];
 
     public function busines_group(){
         return $this->belongsTo(BusinesGroup::class);

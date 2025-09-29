@@ -543,9 +543,24 @@
   </div>
 </template>
 
-<script>
+
+      <script>
+    import { getConfigRun } from '@/services/config_run/get_config_run.js';
+
 export default {
-  name: "DiveExample",
+ data() {
+      return {
+        myprofile: [],
+
+      };
+    },
+        async created () {
+         var myprofile = await getConfigRun()
+        this.myprofile = myprofile;
+
+        console.log(this.myprofile);
+
+        },
   methods: {
     dive(m) {
       // Option 1: Scroll to a specific element by ID

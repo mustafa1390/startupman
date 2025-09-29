@@ -4,34 +4,72 @@ use App\Models\LandingPage;
 use App\Models\SectionUser;
 use Illuminate\Support\Str;
 use App\Models\BusinesGroup;
+use App\Models\Section;
 use App\Models\SectionPublic;
 
 if(! function_exists('landing_model_v1') ) {
     function landing_model_v1($model)
     {
 
-        $busines_groups  =    BusinesGroup::orderby('id','desc')->count();
+         if($model == 'BusinesGroup'){
+            $updateorinsert = BusinesGroup::updateOrCreate([
+                'name'   => 'خدماتی' , 'icon'=> 0
+            ],[
+                'name'   => 'خدماتی' , 'icon'=> 0
+            ]);
+            $updateorinsert = BusinesGroup::updateOrCreate([
+                'name'   => 'فروشگاهی' , 'icon'=> 0
+            ],[
+                'name'   => 'فروشگاهی' , 'icon'=> 0
+            ]);
+            $bugr =  BusinesGroup::where([ ['name','فروشگاهی'], ])->orderby('id','desc')->first();
+            $updateorinsert = BusinesGroup::updateOrCreate([
+                'name'   => 'معرفی محصول' , 'icon'=> 0
+            ],[
+                'name'   => 'معرفی محصول' , 'icon'=> 0 , 'parent_id'=>$bugr->id
+            ]);
+        }
 
-        // dd($busines_groups);
-        if($busines_groups==0){
-        $busenes_group = BusinesGroup::create([  'name'=> 'خدماتی' , 'icon'=> 0 ]);
-        $busenes_group = BusinesGroup::create([  'name'=> 'فروشگاهی' , 'icon'=> 0  ]);
-        $bugr =  BusinesGroup::where([ ['name','فروشگاهی'], ])->orderby('id','desc')->first();
-        $busenes_group = BusinesGroup::create([  'name'=> 'معرفی محصول'  , 'icon'=> 0 , 'parent_id'=>$bugr->id ]);
+    }
+}
+
+if(! function_exists('landing_config_run') ) {
+    function landing_config_run($model,$user)
+    {
+
+
+        if($model=='LandingPage'){
+        $bugr_find =  BusinesGroup::where([ ['name','معرفی محصول'], ])->orderby('id','desc')->first();
+        $random = Str::random(5);
+         $LandingPage = LandingPage::create([  'name'=> 'landing_page' ,'user_id'=> $user->id,
+        'busines_group_id'=> $bugr_find->id  , 'code'=>  $random]);
+        $LandingPage =  LandingPage::where([ ['code',$random], ])->orderby('id','desc')->first();
+
+        return $LandingPage;
+
         }
 
 
+        if($model=='other'){
 
-       $bugr_find =  BusinesGroup::where([ ['name','معرفی محصول'], ])->orderby('id','desc')->first();
+ $Section = Section::create([  'name'=> 'Product'  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'float' , 'name'=> 'right' , 'section_id'=> 1  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'float' , 'name'=> 'center' , 'section_id'=> 1  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'float' , 'name'=> 'left' , 'section_id'=> 1  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'bg' , 'name'=> 'color' , 'section_id'=> 1  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'bg' , 'name'=> 'url' , 'section_id'=> 1  ]);
+ $SectionPublic = SectionPublic::create([  'type'=> 'bg' , 'name'=> 'none' , 'section_id'=> 1  ]);
+
+// $Section = Section::find(1);
+// $Section->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => $LandingPage->id ]);
+// $sectionPublic = SectionPublic::find(2);
+// $sectionPublic->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => $LandingPage->id ]);
+// $sectionPublic = SectionPublic::find(4);
+
+// $sectionPublic->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => $LandingPage->id]);
 
 
-
-    //    ['name', 'status', 'busines_group_id', 'priority', 'code'];
-
-       $random = Str::random(5);
-
-       dd($random);
-            //    $LandingPage = LandingPage::create([  'name'=> 'landing_page' , 'icon'=> 0 ]);
+        }
 
 
 // $records = SectionUser::onlySections()->get();
