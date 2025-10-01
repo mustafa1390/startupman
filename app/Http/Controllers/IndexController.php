@@ -82,7 +82,7 @@ class IndexController extends Controller
 
         if($user){  auth()->guard('user')->logout(); }
         // return redirect()->route('vuepanel',['lang'=>$lang , 'any'=>'auth/login' ]);
-        return redirect()->route('index_home_page');
+        return redirect()->route('home');
     }
 
     public function select_lang($lang_id  )
@@ -94,7 +94,7 @@ class IndexController extends Controller
             session()->put('direction', 'rtl');
         }else{
             session()->put('direction', 'ltr');
-        } 
+        }
 
         session(['app_locale' => $lang_id]);
         app()->setLocale($lang_id);

@@ -27,7 +27,9 @@ const routes = [
     children: [
         { path: 'client/:lang/auth/login',  component: Login, name: 'login', },
         { path: 'client/:lang/auth/register',  component: Register, name: 'register',  },
-        { path: 'client/:lang/auth/codeverify', component: Codeverify, name: 'codeverify', }
+        { path: 'client/:lang/auth/codeverify', component: Codeverify, name: 'codeverify', },
+        { path: 'client/:lang/auth/logout/:token',  component: Login, name: 'logout', },
+
 
 
     ]

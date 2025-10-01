@@ -342,7 +342,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="pages/user/settings.html">Settings</a>
-                    <a class="dropdown-item" href="pages/authentication/card/logout.html">Logout</a>
+                    <a class="dropdown-item" href="javascript:void(0);" @click="handleLogout">Logout</a>
                   </div>
                 </div>
               </li>
@@ -350,3 +350,57 @@
           </nav>
 
 </template>
+
+<script>
+
+import { getProfileUserAuth } from '@/services/user/get_profileuserauth.js';
+
+
+
+export default {
+
+  data() {
+    return {
+      myprofile: [],
+
+    }
+},
+
+  created() {
+
+    this.tell = localStorage.getItem('tell');
+    this.email = localStorage.getItem('email');
+    this.name = localStorage.getItem('name');
+    this.image = localStorage.getItem('image');
+
+
+  },
+  methods: {
+
+
+    async handleLogout() {
+
+var response =  await getProfileUserAuth();
+var myprofile = response;
+
+// console.log(myprofile);
+// alert('hi');
+
+localStorage.removeItem('token');
+localStorage.removeItem('email');
+localStorage.removeItem('image');
+localStorage.removeItem('id');
+localStorage.removeItem('name');
+
+
+swal("از حساب کاربری با موفقیت خارج شدید", "خروج باموفقیت انجام شد", "success");
+window.location.href = window.location.origin+'/panel_logout/'+this.$route.params.lang+'/'+myprofile.remember_token;
+
+},
+
+
+
+}
+}
+
+</script>

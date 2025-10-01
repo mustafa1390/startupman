@@ -1,7 +1,7 @@
 /**
     * button
     * pagetitle
-    * tf card article 
+    * tf card article
     * tf-card-box
     * wishlist-button
     * button-place-bid
@@ -104,7 +104,7 @@
     padding-bottom: 50px;
 }
 
-/* button 
+/* button
 --------------------------------------------------*/
 .tf-button {
     display: flex;
@@ -236,7 +236,7 @@
     line-height: 11px;
 }
 
-/* tf card article 
+/* tf card article
 --------------------------------------------------*/
 .tf-card-article {
     background        : #232323;
@@ -383,7 +383,7 @@
 
 /* tf-card-box */
 /* -------------------------------------- */
-.tf-card-box { 
+.tf-card-box {
     border-radius: 20px;
     background: #1E1E1E;
     padding: 12px 12px 17px 12px;
@@ -536,7 +536,7 @@
 
 .tf-card-box.style-1 .divider {
     margin-top: 16px;
-    margin-bottom: 16px;   
+    margin-bottom: 16px;
 }
 
 .tf-card-box .meta-info,
@@ -884,7 +884,7 @@
 .tf-card-collection .author h4 {
     font-weight: 800;
     line-height: 25px;
-} 
+}
 
 .tf-card-collection .author h5 {
     font-weight: 800;
@@ -1358,7 +1358,7 @@
 .tf-blog-detail .inner-content .inner-post.style-1 .image-box {
     display: flex;
     gap: 20px;
-}   
+}
 
 .tf-blog-detail .inner-content .divider.style-1 {
     margin-top: 28px;
@@ -1718,7 +1718,7 @@
     --swiper-theme-color: none;
     color: #DDF247;
     margin-right: 60px !important;
-    
+
 }
 
 .swiper-pagination.pagination-number .swiper-pagination-bullet-active::after {
@@ -1748,7 +1748,7 @@
     pointer-events: all !important;
 }
 
-.swiper-button-prev.over, 
+.swiper-button-prev.over,
 .swiper-button-next.over {
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.10);
@@ -1763,12 +1763,12 @@
     transition: all 0.3s ease-in-out;
 }
 
-.swiper-button-prev.over:hover, 
+.swiper-button-prev.over:hover,
 .swiper-button-next.over:hover {
     background-color: #DDF247;
 }
 
-.swiper-button-prev.over::after, 
+.swiper-button-prev.over::after,
 .swiper-button-next.over::after {
     font-size: 24px;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1778,7 +1778,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.swiper-button-prev.over:hover:after, 
+.swiper-button-prev.over:hover:after,
 .swiper-button-next.over:hover:after {
     color: rgba(22, 22, 22, 1);
 }
@@ -2001,7 +2001,7 @@
 }
 
 .tf-soft .soft-left .dropdown {
-    width: 200px;
+    width: auto;
 }
 
 .dropdown .btn-secondary {
@@ -2145,7 +2145,7 @@
     background-attachment: fixed;
     background-color: rgba(22, 22, 22, 1);
     background-blend-mode: luminosity;
-    background-image: 
+    background-image:
     url(../images/backgroup-section/bg-4.jpg);
 }
 
@@ -3294,7 +3294,7 @@
     transform: rotate(-25deg);
     display: flex;
     gap: 30px;
-    position: absolute; 
+    position: absolute;
     right: -241px;
     top: 0;
     z-index: -1;
@@ -3315,7 +3315,7 @@
 .bg-home7  img {
     width: 255px;
     height: 384px;
-} 
+}
 
 .box-icon-wrap {
     display: grid;
@@ -4329,7 +4329,7 @@ button.follow:hover {
     font-weight: 800;
     line-height: 28px;
     padding: 0 36px 0 38px;
-    border: 0;  
+    border: 0;
     position: relative;
     opacity: 0.5;
 }
@@ -4443,7 +4443,7 @@ button.follow:hover {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 13px 17px;
-}   
+}
 
 #create .wrap-content .blockchain .widget-coins-item img {
     width: 24px;
@@ -4662,7 +4662,7 @@ button.follow:hover {
 .widget-table-ranking .table-ranking-heading .column2 {
     width: 130px;
 }
-  
+
 .widget-table-ranking .table-ranking-heading .column1 {
     width: 360px;
 }
@@ -4676,7 +4676,7 @@ button.follow:hover {
     font-weight: 700;
     line-height: 19px;
 }
-  
+
 .widget-table-ranking .table-ranking-content .fl-row-ranking {
     display: flex;
     align-items: center;
@@ -4692,7 +4692,7 @@ button.follow:hover {
     flex-direction: column;
     gap: 10px;
 }
-  
+
 .widget-table-ranking .table-ranking-content .fl-row-ranking .td1,
 .widget-table-ranking .table-ranking-content .fl-row-ranking .td2,
 .widget-table-ranking .table-ranking-content .fl-row-ranking .td3,
@@ -4735,7 +4735,7 @@ img {
     border-radius: 10px;
     height: 60px;
 }
-  
+
 .table-ranking-content .fl-row-ranking h6 {
     font-size: 16px;
     color: #fff;
@@ -4745,11 +4745,11 @@ img {
 .table-ranking-content .fl-row-ranking .price.gem i {
     font-size: 14px;
 }
-  
+
 .table-ranking-content .fl-row-ranking .danger h6 {
     color: #f24747;
 }
-  
+
 .table-ranking-content .fl-row-ranking .warning h6 {
     color: #ddf247;
 }
@@ -5072,7 +5072,7 @@ img {
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
-}   
+}
 
 .product-item.traits .content {
     display: grid;
@@ -5457,10 +5457,10 @@ fieldset.password > i::before {
 
 .modal-dialog-centered{
     display: flex;
-    display: -webkit-box;  
-    display: -moz-box;      
-    display: -ms-flexbox;   
-    display: -webkit-flex; 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     align-items: center;
     min-height: 100%;
     max-width: 500px;
@@ -5708,7 +5708,7 @@ fieldset.password > i::before {
     transition: all 0.3s ease-in-out;
 }
 
-#select-day ul.show {   
+#select-day ul.show {
     top: 100%;
     opacity: 1;
     visibility: visible;

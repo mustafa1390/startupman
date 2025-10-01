@@ -6,9 +6,9 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 
 
-{{-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"  > --}}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"  >
 
-<html lang="ar" dir="rtl">
+{{-- <html lang="ar" dir="rtl"> --}}
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
@@ -36,6 +36,23 @@
 .dropdown .btn-secondary {
   padding: 10px 25px!important;
 }
+
+.tf-soft .dropdown .dropdown-menu {
+  padding: 6px!important;
+
+}
+
+.profile_name_navi::after {
+  content: none!important;
+
+}
+
+.w80{
+        width: 80px!important;
+}
+.w110{
+        width: 110px!important;
+}
     </style>
 
 
@@ -49,13 +66,103 @@
   text-align: left!important;
 }
     </style>
+
+
+@if (__('message.dir') == 'rtl')
+    <link href="{{ asset('falcon/public/assets/css/mystyle.css') }}" rel="stylesheet"  >
+
+<style>
+#main-nav > ul > li {
+  float: right!important;
+  }
+
+  .flat-wallet {
+  left: 15px!important;
+  }
+.canvas-nav-wrap.active .inner-canvas-nav {
+    left: 0!important;
+}
+
+.canvas-nav-wrap .inner-canvas-nav {
+
+    left: -340px!important;
+
+}
+
+.inner-canvas-nav .side-bar .canvas-nav-close {
+    left: 30px!important;
+}
+
+#main-nav .sub-menu {
+  right: 0!important;
+}
+#main-nav .nav-sub-menu {
+  right: 100%!important;
+}
+.f_iransans{
+      font-family: iransans !important;
+}
+
+.pl12{
+    font-size: 12px; padding-left: 20px;
+}
+
+.header_1 #main-nav {
+  right: 16.48%!important;
+
+}
+
+</style>
+
+@endif
+
+
+@if (__('message.dir') == 'ltr')
+
+<style>
+
+  .flat-wallet {
+  right: 15px!important;
+  }
+
+.canvas-nav-wrap.active .inner-canvas-nav {
+    right: 0!important;
+}
+
+.canvas-nav-wrap .inner-canvas-nav {
+
+    right: -340px!important;
+
+}
+.inner-canvas-nav .side-bar .canvas-nav-close {
+    right: 30px!important;
+}
+#main-nav .sub-menu {
+  left: 0!important;
+}
+
+#main-nav .nav-sub-menu {
+  left: 100%!important;
+}
+
+.pl12{
+    font-size: 12px;
+}
+.header_1 #main-nav {
+  left: 16.48%!important;
+
+}
+</style>
+
+@endif
+
     @yield('style')
 </head>
 
 <body class="body bodyl_{{ __('message.dir') }}">
 
     <!-- preload -->
-    <div class="preload preload-container">
+    {{-- <div class="preload preload-container">
         <div class="middle">
             <div class="bar bar1"></div>
             <div class="bar bar2"></div>
@@ -66,7 +173,7 @@
             <div class="bar bar7"></div>
             <div class="bar bar8"></div>
           </div>
-    </div>
+    </div> --}}
     <!-- /preload -->
 
     <div id="wrapper">

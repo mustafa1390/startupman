@@ -698,3 +698,44 @@ if($user){
 
     }
 }
+
+
+
+if(! function_exists('update_data_user_auth') ) {
+    function update_data_user_auth($user)
+    {
+
+        if(($user->email==null)&&($user->authentication->email==null)){}
+        if(($user->email!=null)&&($user->authentication->email==null)){$user->authentication->update([ 'email'=>$user->email ]);}
+        if(($user->email==null)&&($user->authentication->email!=null)){$user->update([ 'email'=>$user->authentication->email ]);}
+
+        if(($user->tell==null)&&($user->authentication->tell==null)){}
+        if(($user->tell!=null)&&($user->authentication->tell==null)){$user->authentication->update([ 'tell'=>$user->tell ]);}
+        if(($user->tell==null)&&($user->authentication->tell!=null)){$user->update([ 'tell'=>$user->authentication->tell ]);}
+
+    }
+}
+
+
+
+
+if(! function_exists('number_step_auth') ) {
+    function number_step_auth( $auth_id )
+    {
+
+        // $auth = Authentication::where([ ['user_id',$auth_id], ])->first();
+        $auth = Authentication::find($auth_id);
+
+        $sum_step = '0';
+        if($auth->tell_verify=='active'){ $sum_step = '1';   }
+        if(($auth->tell_verify=='active')&&($auth->email_verify=='active')){ $sum_step = '2';  }
+        if(($auth->tell_verify=='active')&&($auth->email_verify=='active')&&($auth->cardmelli_verify=='active')){ $sum_step = '3'; }
+        if(($auth->tell_verify=='active')&&($auth->email_verify=='active')&&($auth->cardmelli_verify=='active')&&($auth->selfi_verify=='active')){ $sum_step = '4'; }
+        if(($auth->tell_verify=='active')&&($auth->email_verify=='active')&&($auth->cardmelli_verify=='active')&&($auth->selfi_verify=='active')&&($auth->document_verify=='active')){ $sum_step = '5'; }
+
+        return $sum_step;
+
+
+    }
+}
+
