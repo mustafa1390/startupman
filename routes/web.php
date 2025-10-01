@@ -22,3 +22,6 @@ Route::namespace('Auth')->prefix('admin')->group(function () {
 
 Route::get('/panel_login/{lang}/{remember_token}', [IndexController::class, 'panel_login'])->name('panel_login');
 Route::get('/panel/user/{lang}/{any}', [IndexController::class, 'panel_user'])->where('any', '.*')->name('panel.user')->middleware([ 'userauth']);
+
+Route::get('/select_lang/{lang_id}', [IndexController::class, 'select_lang'])->name('select_lang');
+Route::get('/', [IndexController::class, 'home'])->name('home')->middleware('set.locale.direction');

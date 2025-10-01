@@ -20,11 +20,11 @@ class IndexController extends Controller
         // send_sms_smsir( '123456' , '09384762155' , 'sms_verifylogin');
          // dd('hi');
 
-        $blog_listpages=Page::where([ ['status','active'], ])->orderBy('id','desc')->get();
+        // $blog_listpages=Page::where([ ['status','active'], ])->orderBy('id','desc')->get();
 
         // dd($blog_listpages);
 
-         return view('index.home',compact( ['blog_listpages' , 'local'] ));
+         return view('index_template.home.index',compact( [  'local'] ));
     }
     public function aboutus(){
         // session()->put('direction', 'rtl');
@@ -94,8 +94,7 @@ class IndexController extends Controller
             session()->put('direction', 'rtl');
         }else{
             session()->put('direction', 'ltr');
-        }
-
+        } 
 
         session(['app_locale' => $lang_id]);
         app()->setLocale($lang_id);

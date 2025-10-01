@@ -49,6 +49,7 @@ class SetLocaleAndDirection
         app()->setLocale(session('app_locale'));
 
 
+        // dd(session('app_locale'));
         return $next($request);
     }
 }
