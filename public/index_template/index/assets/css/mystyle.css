@@ -1,0 +1,34 @@
+.bodyl_rtl {
+  direction: rtl!important;
+  text-align: right!important;
+}
+.bodyl_ltr {
+  direction: ltr!important;
+  text-align: left!important;
+}
+
+
+.dropdown .btn-secondary {
+  padding: 10px 25px!important;
+}
+
+.tf-soft .dropdown .dropdown-menu {
+  padding: 6px!important;
+
+}
+
+.profile_name_navi::after {
+  content: none!important;
+
+}
+
+.w80{
+        width: 80px!important;
+}
+.w110{
+        width: 110px!important;
+}
+
+.null{
+    display: none!important;
+}

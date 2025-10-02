@@ -1,0 +1,93 @@
+
+#main-nav > ul > li {
+  float: right!important;
+  }
+
+  .flat-wallet {
+  left: 15px!important;
+  }
+.canvas-nav-wrap.active .inner-canvas-nav {
+    left: 0!important;
+}
+
+.canvas-nav-wrap .inner-canvas-nav {
+
+    left: -340px!important;
+
+}
+
+.inner-canvas-nav .side-bar .canvas-nav-close {
+    left: 30px!important;
+}
+
+#main-nav .sub-menu {
+  right: 0!important;
+}
+#main-nav .nav-sub-menu {
+  right: 100%!important;
+}
+.f_iransans{
+      font-family: iransans !important;
+}
+
+.pl12{
+    font-size: 12px; padding-left: 20px;
+}
+
+.header_1 #main-nav {
+  right: 16.48%!important;
+
+}
+
+.home-6 .section-menu-left {
+    right: 0;
+}
+
+.market-page .btn-canvas.active {
+    right: 215px;
+}
+
+.btn-canvas.active {
+    right: 290px;
+}
+
+.home-6 .wrap-content {
+    margin-right: 281px;
+}
+.btn-canvas {
+    right: 15px;
+}
+
+@media (max-width: 1440px) {
+  .home-6 .wrap-content.full {
+    margin-right: 0!important;
+    width: 100%!important;
+  }
+}
+
+@media (max-width: 700px) {
+    #wrapper #page .section-menu-left {
+        right: 0;
+    }
+    #wrapper #page .section-menu-left.null {
+        right: 0;
+    }
+}
+
+.section-menu-left .list-menu > ul > li.has-item > a::before {
+    left: 10px;
+}
+
+.section-menu-left .list-menu > ul > li > a i {
+    right: 9px;
+}
+.span_icon{
+    padding-right: 26px;
+}
+.span_icon_ul_li{
+    padding-right: 10px;
+}
+
+.section-menu-left .list-menu ul.sub-item li::before {
+    right: 0;
+}

@@ -25,6 +25,9 @@ class IndexController extends Controller
         // dd($blog_listpages);
 
          return view('index_template.home.index',compact( [  'local'] ));
+        //  return view('user2.dashboard',compact( [  'local'] ));
+
+
     }
     public function aboutus(){
         // session()->put('direction', 'rtl');
@@ -169,7 +172,8 @@ class IndexController extends Controller
         session(['app_locale' => $lang]);
         app()->setLocale($lang);
 
-    return view('index.panel_user');
+    // return view('index.panel_user_falcon');
+    return view('index.panel_user_open9');
     }
 
 }

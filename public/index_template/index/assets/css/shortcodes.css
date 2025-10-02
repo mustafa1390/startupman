@@ -3006,14 +3006,13 @@
 }
 
 /* home-6 */
-.btn-canvas {
+.btn-canvas { 
     display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
     z-index: 30;
     top: 43px;
-    left: 15px;
     height: 45px;
     width: 45px;
     text-align: center;
@@ -3027,9 +3026,6 @@
     transition: all 0.5s linear;
 }
 
-.btn-canvas.active {
-    left: 290px;
-}
 
 .btn-canvas .canvas::after,
 .btn-canvas .canvas::before {
@@ -3053,7 +3049,6 @@
     position: fixed;
     height: 100%;
     overflow-y: auto;
-    left: 0;
     padding-bottom: 180px;
 }
 
@@ -3074,7 +3069,6 @@
     width: calc(100vw - 281px);
     padding: 73px 124px 30px 109px;
     background: #161616;
-    margin-left: 281px;
     -webkit-transition: all 0.5s linear;
     -moz-transition: all 0.5s linear;
     -ms-transition: all 0.5s linear;
@@ -3585,10 +3579,6 @@ form label i.icon-star.active {
 
 #page.market-page #market {
     margin-bottom: -30px;
-}
-
-.market-page .btn-canvas.active {
-    left: 215px;
 }
 
 #market-header {

@@ -92,7 +92,7 @@ return redirect()->route('admin.dashboard');
         // $setting=Setting::find(1);
 
         return view('auth.admin.login');
-        // return view('user1.dashboard');
+        // return view('user2.dashboard');
 
 
 
