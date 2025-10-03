@@ -82,3 +82,17 @@
 .section-menu-left .list-menu ul.sub-item li::before {
     left: 0;
 }
+.widget-tabs .tf-soft {
+    right: 0;
+}
+
+.breadcrumbs li {
+    margin-right: 32px;
+}
+
+.breadcrumbs li.icon-keyboard_arrow_right::before {
+    right: -22px;
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e912";
+}

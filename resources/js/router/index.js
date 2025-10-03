@@ -4,6 +4,7 @@ import Login from '@/views/Auth/Login.vue';
 import Register from '@/views/Auth/Register.vue';
 import Home from '@/views/Auth/Register.vue';
 import Dashboard from '@/views/User/Dashboard.vue';
+import Test from '@/views/User/Test.vue';
 import Codeverify from '@/views/Auth/Codeverify.vue';
 // import Login from '@/components/Login.vue';
 import PanelLayoutFalcon from '@/layouts/PanelLayoutFalcon.vue';
@@ -19,6 +20,7 @@ const routes = [
         children: [
             // { path: '', component: Home ,name: 'home' },
             { path: 'panel/user/:lang/dashboard', component: Dashboard ,name: 'dashboard' },
+            { path: 'panel/user/:lang/test', component: Test ,name: 'test' },
 
         ]
     },

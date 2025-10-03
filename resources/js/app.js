@@ -14,12 +14,12 @@ import en from './language/en.json';
 
 
 const options = {
-    // position: "absolute",
-    // height: "5px",
-    // color:"#374C98;",
+    position: "absolute",
+    height: "5px",
+    // color:"#E2FE26",
 
-  color: '#374C98',
-  failedColor: '#ff0000',
+//   color: '#E2FE26;',
+//   failedColor: '#fdfdfdff',
   thickness: '6px',
   location: 'top',
   autoRevert: true,
@@ -59,7 +59,7 @@ const pinia = createPinia();
   app.use(pinia);
   app.use(router);
   app.use(i18n);
-  
+
 app.use(Vue3Progress, options);
 app.use(Notifications);
 

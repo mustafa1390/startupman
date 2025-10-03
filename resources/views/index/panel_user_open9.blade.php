@@ -54,16 +54,39 @@
     @vite('resources/js/app.js')
 
 
+
+        <div class="preload preload-container"  style="display: none;"   >
+        <div class="middle">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+          </div>
+    </div>
+
 <div  id="app">
 
 
 
 </div>
 
+    <div class="tf-mouse tf-mouse-outer"></div>
+    <div class="tf-mouse tf-mouse-inner"></div>
+
+    <div class="progress-wrap active-progress">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;"></path>
+        </svg>
+    </div>
+
 
 
     <!-- Javascript -->
-    <script src="{{ asset('index_template/index/assets/js/jquery.min.js')}}"></script>
+     {{-- <script src="{{ asset('index_template/index/assets/js/jquery.min.js')}}"></script> --}}
     <script src="{{ asset('index_template/index/assets/js/popper.min.js')}}"></script>
     <script src="{{ asset('index_template/index/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('index_template/index/assets/js/bootstrap.min.js')}}"></script>
@@ -82,7 +105,7 @@
     <script src="{{ asset('index_template/index/assets/js/main.js')}}"></script>
 
 
-    <script>
+    {{-- <script>
   const btn = document.querySelector('.btn-canvas');
   const left = document.querySelector('.section-menu-left');
   const wrap  = document.querySelector('.wrap-content');
@@ -94,7 +117,7 @@ if (window.innerWidth <= 700) {
     // alert('hhh');
   btn.classList.add('active');
 }
-    </script>
+    </script> --}}
 </body>
 
 </html>

@@ -39,10 +39,16 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/user/checked_codeverify_email', [ProfileController::class, 'checked_codeverify_email']);
     Route::post('/user/checked_active_codmelli', [ProfileController::class, 'checked_active_codmelli']);
 
-        Route::get('/profile/user', [ProfileController::class, 'profile_user']);
+    Route::get('/profile/user', [ProfileController::class, 'profile_user']);
 
-        
+
     Route::get('/config_run', [ConfigController::class, 'config_run']);
+
+    Route::prefix('busines_group')->group(function () {
+
+    Route::post('/index_list_parent', [ProfileController::class, 'index_list_parent']);
+
+    });
 
 });
 

@@ -32,3 +32,9 @@
 .null{
     display: none!important;
 }
+@media (max-width: 1440px) {
+
+.widget-menu-tab li{
+width: 32%;
+}
+}

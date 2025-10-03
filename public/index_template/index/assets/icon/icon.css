@@ -67,9 +67,7 @@
 .icon-keyboard_arrow_up:before {
   content: "\e911";
 }
-.icon-keyboard_arrow_right:before {
-  content: "\e912";
-}
+
 .icon-keyboard_arrow_left:before {
   content: "\e913";
 }

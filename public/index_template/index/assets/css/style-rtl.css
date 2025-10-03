@@ -47,9 +47,6 @@
     right: 215px;
 }
 
-.btn-canvas.active {
-    right: 290px;
-}
 
 .home-6 .wrap-content {
     margin-right: 281px;
@@ -63,6 +60,11 @@
     margin-right: 0!important;
     width: 100%!important;
   }
+
+.btn-canvas.active {
+    right: 290px;
+}
+
 }
 
 @media (max-width: 700px) {
@@ -72,6 +74,10 @@
     #wrapper #page .section-menu-left.null {
         right: 0;
     }
+
+.btn-canvas.active {
+    right: 0px;
+}
 }
 
 .section-menu-left .list-menu > ul > li.has-item > a::before {
@@ -90,4 +96,22 @@
 
 .section-menu-left .list-menu ul.sub-item li::before {
     right: 0;
+}
+.widget-tabs .tf-soft {
+    left: 0;
+}
+.breadcrumbs li {
+    margin-left: 32px;
+}
+
+.breadcrumbs li.icon-keyboard_arrow_right::before {
+    left: -22px;
+}
+
+.icon-keyboard_arrow_right:before {
+  content: "\e913";
+}
+
+.breadcrumbs li a {
+  font-family: iransans!important;
 }
