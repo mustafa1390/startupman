@@ -29,11 +29,11 @@
 </div>
 
 <div class="widget-tabs relative" >
-    <ul class="widget-menu-tab "   v-if="this.busines_group!=''">
-        <li class="item-title" v-for="item   in    this.busines_group" :key="item.id" :class="item.id === '1' ? 'active' : ''"
+    <ul class="widget-menu-tab "   v-if="this.filteredbusinesCat!=''">
+        <li class="item-title" v-for="item   in    this.filteredbusinesCat" :key="item.id" :class="item.id === '1' ? 'active' : ''"
         @click="dive(item.id)" >
             <span class="inner">
-                {{ item.name }}</span>
+                {{ item.name }} </span>
         </li>
     </ul>
 </div>
@@ -50,8 +50,8 @@
 
 
 <div class="widget-tabs relative"  >
-    <ul class="widget-menu-tab "   v-if="this.busines_group!=''">
-        <li class="item-title" v-for="item   in    this.busines_group" :key="item.id" :class="item.id === '1' ? 'active' : ''"
+    <ul class="widget-menu-tab "   v-if="this.filteredItems!=''">
+        <li class="item-title" v-for="item   in    this.filteredItems" :key="item.id" :class="item.id === '1' ? 'active' : ''"
         @click="dive(item.id)" >
             <span class="inner">
                 {{ item.name }}</span>
@@ -617,6 +617,7 @@ export default {
       return {
         myprofile: [],
         busines_group: [],
+        parent_id : 0,
 
       };
     },
@@ -627,12 +628,26 @@ export default {
          var busines_group = await getBusinesGroupList()
         this.busines_group = busines_group;
 
-        console.log(this.busines_group);
+        console.log(this.myprofile);
 
         // alert('hi');
         },
+
+  computed: {
+    filteredbusinesCat() {
+      return this.busines_group.filter(item => item.parent_id == null);
+    },
+    filteredItems() {
+      return this.busines_group.filter(item => item.parent_id == this.parent_id);
+    },
+},
+
+
   methods: {
     dive(m) {
+
+
+        this.parent_id = m;
       // Option 1: Scroll to a specific element by ID
       const section = document.getElementById("bottom-section");
       if (section) {

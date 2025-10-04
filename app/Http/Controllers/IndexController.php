@@ -24,8 +24,8 @@ class IndexController extends Controller
 
         // dd($blog_listpages);
 
-        //  return view('index_template.home.index',compact( [  'local'] ));
-         return view('user2.dashboard',compact( [  'local'] ));
+         return view('index_template.home.index',compact( [  'local'] ));
+        //  return view('user2.dashboard',compact( [  'local'] ));
 
 
     }

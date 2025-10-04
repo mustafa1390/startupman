@@ -30,6 +30,41 @@ if(! function_exists('landing_model_v1') ) {
             ]);
         }
 
+
+         if($model == 'Section'){
+
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'عنوان'
+            ],[
+                'name'   => 'عنوان'
+            ]);
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'متن'
+            ],[
+                'name'   => 'متن'
+            ]);
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'مرحله به مرحله'
+            ],[
+                'name'   => 'مرحله به مرحله'
+            ]);
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'قیمت گذاری'
+            ],[
+                'name'   => 'قیمت گذاری'
+            ]);
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'توصیه نامه ها'
+            ],[
+                'name'   => 'توصیه نامه ها'
+            ]);
+            $updateorinsert = Section::updateOrCreate([
+                'name'   => 'لوگوها'
+            ],[
+                'name'   => 'لوگوها'
+            ]);
+         }
+
     }
 }
 

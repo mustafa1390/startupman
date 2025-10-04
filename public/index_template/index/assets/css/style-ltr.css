@@ -48,7 +48,8 @@
 }
 
 .btn-canvas {
-    left: 15px;
+    left: 0px;
+  margin-top: -40px;
 }
 @media (max-width: 1440px) {
   .home-6 .wrap-content.full {

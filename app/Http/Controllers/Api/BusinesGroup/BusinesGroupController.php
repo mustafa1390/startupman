@@ -19,7 +19,7 @@ class BusinesGroupController extends Controller
 
 
     //  $data['user_id'] = $request->user()->id;
-     $busines_groups = BusinesGroup::where([ ['parent_id','=',null] ])->orderby('id','asc')->get();
+     $busines_groups = BusinesGroup::where([ ['id','<>',0] ])->orderby('id','asc')->get();
      return  BusinesGroupResource::collection($busines_groups);
 
         // return  New DoctorOfficeResource($doctor);
