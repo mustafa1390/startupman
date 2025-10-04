@@ -28,76 +28,36 @@
     </h2>
 </div>
 
-<div class="widget-tabs relative">
-                                    <!-- <div class="tf-soft">
-                                        <div class="soft-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M3.125 5.625H16.875M3.125 10H16.875M3.125 14.375H10" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                <span>Sort by: recently added</span>
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <h6>Sort by</h6>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter" href="#">
-                                                            <span>Recently added</span>
-                                                            <span class="icon-tick"><span class="path2"></span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter active" href="#">
-                                                            <span>Price: Low to High</span>
-                                                            <span class="icon-tick"><span class="path2"></span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter" href="#">
-                                                            <span>Price: High to Low</span>
-                                                            <span class="icon-tick"><span class="path2"></span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter" href="#">
-                                                            <span>Auction ending soon</span>
-                                                            <span class="icon-tick"><span class="path2"></span></span>
-                                                        </div>
-                                                    </a>
+<div class="widget-tabs relative" >
+    <ul class="widget-menu-tab "   v-if="this.busines_group!=''">
+        <li class="item-title" v-for="item   in    this.busines_group" :key="item.id" :class="item.id === '1' ? 'active' : ''"
+        @click="dive(item.id)" >
+            <span class="inner">
+                {{ item.name }}</span>
+        </li>
+    </ul>
+</div>
 
-                                                    <h6>Options</h6>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter" href="#">
-                                                            <span>Auction ending soon</span>
-                                                            <input class="check" type="checkbox" value="checkbox" name="check" checked="">
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="dropdown-item">
-                                                        <div class="sort-filter" href="#">
-                                                            <span>Show lazy minted</span>
-                                                            <input class="check" type="checkbox" value="checkbox" name="check">
-                                                        </div>
-                                                    </a>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <ul class="widget-menu-tab ">
-                                        <li class="item-title active">
-                                            <span class="inner">معرفی محصول</span>
-                                        </li>
-                                        <li class="item-title">
-                                            <span class="inner">فروش محصول</span>
-                                        </li>
-                                        <li class="item-title">
-                                            <span class="inner">Status</span>
-                                        </li>
-                                        <li class="item-title">
-                                            <span class="inner">Price range</span>
-                                        </li>
-                                    </ul>
-                                </div>
+<div class="heading-section"  id="bottom-section">
+    <h2 class="tf-title pb-30" style="perspective: 400px;">
+        <div style="display: block; text-align: start; position: relative;
+        transform-origin: 50% 50% 0px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+         {{ $t('Select-landing-page-type') }}
+    </div>
+    </h2>
+</div>
+
+
+<div class="widget-tabs relative"  >
+    <ul class="widget-menu-tab "   v-if="this.busines_group!=''">
+        <li class="item-title" v-for="item   in    this.busines_group" :key="item.id" :class="item.id === '1' ? 'active' : ''"
+        @click="dive(item.id)" >
+            <span class="inner">
+                {{ item.name }}</span>
+        </li>
+    </ul>
+</div>
 
 
 
@@ -122,7 +82,7 @@
                     <div class="ms-3 my-x1">
                       <h5 class="fs-9 fw-semi-bold mb-2">
                         <a class="text-900 hover-primary stretched-link"
-                        @click="dive(1)"  >کمپین مشترک</a></h5>
+                        @click="dive(11)"  >کمپین مشترک</a></h5>
                     </div>
                   </div>
                     </span>
@@ -467,7 +427,7 @@
                           <hr class="my-4">
                         </div>
                       </div>
-                      <div class="d-flex" id="bottom-section" style="height:300px; background:#d1f7c4;">
+                      <div class="d-flex" style="height:300px; background:#d1f7c4;">
                         <span class="fa-stack ms-n1 me-3"><svg class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x text-200" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg><!-- <i class="fas fa-circle fa-stack-2x text-200"></i> Font Awesome fontawesome.com --><svg class="svg-inline--fa fa-align-left fa-w-14 fa-inverse fa-stack-1x text-primary" data-fa-transform="shrink-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style="transform-origin: 0.4375em 0.5em;"><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96zM432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" transform="translate(-224 -256)"></path></g></g></svg><!-- <i class="fa-inverse fa-stack-1x text-primary fas fa-align-left" data-fa-transform="shrink-2"></i> Font Awesome fontawesome.com --></span>
                         <div class="flex-1">
                           <h5 class="mb-2 fs-9">Description</h5>
@@ -650,11 +610,13 @@
 
       <script>
     import { getConfigRun } from '@/services/config_run/get_config_run.js';
+    import { getBusinesGroupList } from '@/services/busines_group/index_list_parent.js';
 
 export default {
  data() {
       return {
         myprofile: [],
+        busines_group: [],
 
       };
     },
@@ -662,7 +624,10 @@ export default {
          var myprofile = await getConfigRun()
         this.myprofile = myprofile;
 
-        console.log(this.myprofile);
+         var busines_group = await getBusinesGroupList()
+        this.busines_group = busines_group;
+
+        console.log(this.busines_group);
 
         // alert('hi');
         },

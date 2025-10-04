@@ -70,7 +70,7 @@
 
     <div id="wrapper">
         <div id="page" class="home-6 flex">
-
+{{-- @include('user2.layouts.navbar') --}}
 
             @include('user2.layouts.sidebar')
 

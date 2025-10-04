@@ -11,6 +11,7 @@
 
     <div id="wrapper">
         <div id="page" class="home-6 flex">
+        <!-- <div id="page" class="market-page"> -->
 
     <div  :class="['section-menu-left', { null: isActiveesidebar }]" >
 

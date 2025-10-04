@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BusinesGroup\BusinesGroupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Api\ItemController;
@@ -45,9 +46,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('/config_run', [ConfigController::class, 'config_run']);
 
     Route::prefix('busines_group')->group(function () {
-
-    Route::post('/index_list_parent', [ProfileController::class, 'index_list_parent']);
-
+    Route::post('/index_list_parent', [BusinesGroupController::class, 'index_list_parent']);
     });
 
 });
