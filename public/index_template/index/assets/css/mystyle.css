@@ -35,6 +35,10 @@
 @media (max-width: 1440px) {
 
 .widget-menu-tab li{
-width: 32%;
+width: 20%;
 }
 }
+
+.home-6 {
+padding: 15px 15px 15px 15px;
+  }
