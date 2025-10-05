@@ -14,4 +14,8 @@ class LandingPage extends Model
         return $this->belongsTo(BusinesGroup::class);
     }
 
+    public function section_users(){
+        return $this->hasMany(SectionUser::class , 'landing_page_id');
+    }
+
 }

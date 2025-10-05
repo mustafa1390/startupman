@@ -1,7 +1,7 @@
 import api from '@/services/axios';
 /* eslint-disable */
-export async function getConfigRun () {
- return await api.get('/config_run')
+export async function storeLandingPage (credentials) {
+ return await api.post('/landing_page/store',credentials)
     .then(response => {
       return response.data.data
     })

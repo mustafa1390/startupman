@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BusinesGroup\BusinesGroupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Api\ItemController;
+use App\Http\Controllers\Api\LandingPAge\LandingPageController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Auth\AdminAuthController;
@@ -43,10 +44,15 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('/profile/user', [ProfileController::class, 'profile_user']);
 
 
-    Route::get('/config_run', [ConfigController::class, 'config_run']);
 
+    
     Route::prefix('busines_group')->group(function () {
     Route::post('/index_list_parent', [BusinesGroupController::class, 'index_list_parent']);
+    });
+
+    Route::prefix('landing_page')->group(function () {
+    Route::post('/store', [LandingPageController::class, 'store']);
+    Route::post('/update_section', [LandingPageController::class, 'update_section']);
     });
 
 });

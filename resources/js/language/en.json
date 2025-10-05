@@ -709,7 +709,12 @@
 "Mobile-number-email": "Mobile number or email",
 
 
-"Select-landing-page-type": "Select the landing page type"
+
+
+"Select-Busines-page-type": "Choose your business type",
+"Select-landing-page-type": "Select the landing page type",
+"Select-multi-section": "What sections should your login page have?"
+
 
 
 }

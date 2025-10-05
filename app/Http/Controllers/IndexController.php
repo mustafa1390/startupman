@@ -8,9 +8,39 @@ use App\Models\User;
 use App\Models\LogUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Process\Process;
+use Illuminate\Support\Facades\Artisan;
 
 class IndexController extends Controller
 {
+    public function config_optimize(){
+
+    // Artisan::call('route:cache');
+    // Artisan::call('config:cache');
+    // Artisan::call('cache:clear');
+    // Artisan::call('view:clear');
+    // Artisan::call('optimize:clear');
+    // Artisan::call('migrate');
+
+    config_run_first();
+
+    // exec('composer dump-autoload');
+
+
+// $process = new Process(['composer', 'dump-autoload']);
+// $process->setWorkingDirectory(base_path());
+// $process->run();
+
+// if ($process->isSuccessful()) {
+//     echo "Autoload refreshed successfully!";
+// } else {
+//     echo "Error: " . $process->getErrorOutput();
+// }
+
+
+
+
+    }
     public function dashboard(){
 
          return view('admin.dashboard.index');

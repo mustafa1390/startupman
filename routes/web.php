@@ -27,3 +27,4 @@ Route::get('/panel_logout/{lang}/{remember_token}', [IndexController::class, 'pa
 
 Route::get('/select_lang/{lang_id}', [IndexController::class, 'select_lang'])->name('select_lang');
 Route::get('/', [IndexController::class, 'home'])->name('home')->middleware('set.locale.direction');
+Route::get('/config_optimize', [IndexController::class, 'config_optimize'])->name('config_optimize');

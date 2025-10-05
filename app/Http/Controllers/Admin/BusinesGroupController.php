@@ -53,7 +53,7 @@ class BusinesGroupController extends Controller
 
            public function index()
     {
-landing_model_v1('BusinesGroup');
+        landing_model_v1('BusinesGroup');
         $busines_groups  =    BusinesGroup::orderby('id','desc')->get();
         $show_busines_group  =    BusinesGroup::whereNull('parent_id')->with('childrenRecursive')->get();
 

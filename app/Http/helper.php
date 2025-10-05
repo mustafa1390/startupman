@@ -215,6 +215,7 @@ if(! function_exists('validate_empty') ) {
 
         if($name=='tell'){
             $quer= $authentication->user->tell;
+            $random = '123456';
             $authentication->update([ 'tell_code_verify' => $random ]);
             Alert::success('با موفقیت ارسال شد', 'کد وریفای با موفقیت به شماره همراه شما ارسال شد');
         }
