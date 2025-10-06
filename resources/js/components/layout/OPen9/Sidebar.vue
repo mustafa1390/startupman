@@ -28,6 +28,14 @@
                                                                      </router-link>
 
                 </li>
+                <li>
+
+                                            <router-link :to="{ name: 'landing_page'  }"  >
+                    <i class="icon-gem-1"></i>
+                        <span class="span_icon">landing_page  </span>
+                                                                     </router-link>
+
+                </li>
                 <li  :class="['has-item', { active: IsActiveI }]"   @click="toggleLiItem()">
                     <!-- <li class="has-item active"> -->
                     <a class="button-sub-item"><i class="icon-link"></i><span class="span_icon">Explore</span> </a>
@@ -61,7 +69,7 @@
         </div>
         <div class="list-menu wrap-bottom">
             <ul class="menu-bottom">
-                <li  :class="['has-item language relative', { active: IsActiveLang }]"  @click="toggleLang()"> 
+                <li  :class="['has-item language relative', { active: IsActiveLang }]"  @click="toggleLang()">
                     <a class="button-sub-item" v-if="this.$route.params.lang=='en'">
                         <img src="/index_template/index/assets/images/english.png" alt="">
                         <span>English</span>

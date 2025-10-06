@@ -45,12 +45,13 @@ Route::middleware('auth:sanctum')->group( function () {
 
 
 
-    
+
     Route::prefix('busines_group')->group(function () {
     Route::post('/index_list_parent', [BusinesGroupController::class, 'index_list_parent']);
     });
 
     Route::prefix('landing_page')->group(function () {
+    Route::get('/index', [LandingPageController::class, 'index']);
     Route::post('/store', [LandingPageController::class, 'store']);
     Route::post('/update_section', [LandingPageController::class, 'update_section']);
     });

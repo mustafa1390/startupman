@@ -45,3 +45,16 @@ padding: 15px 15px 15px 15px;
 .tf-button.style-1 {
   color: #000;
 }
+
+.icon-keyboard_arrow_down {
+  transition: transform 0.3s ease;
+}
+
+
+.icon-keyboard_arrow_down.rotated {
+  transform: rotate(180deg);
+}
+
+.d_none{
+    display: none;
+}

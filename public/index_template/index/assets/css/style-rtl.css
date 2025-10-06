@@ -116,3 +116,7 @@
 .breadcrumbs li a {
   font-family: iransans!important;
 }
+
+.product-item > i {
+    left: 20px;
+}

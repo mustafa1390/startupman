@@ -97,3 +97,7 @@
 .icon-keyboard_arrow_right:before {
   content: "\e912";
 }
+
+.product-item > i {
+    right: 20px;
+}

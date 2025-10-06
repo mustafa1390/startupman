@@ -5,6 +5,8 @@ import Register from '@/views/Auth/Register.vue';
 import Home from '@/views/Auth/Register.vue';
 import Dashboard from '@/views/User/Dashboard.vue';
 import Test from '@/views/User/Test.vue';
+import SingleLandingPage from '@/views/User/SingleLandingPage.vue';
+import LandingPage from '@/views/User/LandingPage.vue';
 import Codeverify from '@/views/Auth/Codeverify.vue';
 // import Login from '@/components/Login.vue';
 import PanelLayoutFalcon from '@/layouts/PanelLayoutFalcon.vue';
@@ -21,7 +23,8 @@ const routes = [
             // { path: '', component: Home ,name: 'home' },
             { path: 'panel/user/:lang/dashboard', component: Dashboard ,name: 'dashboard' },
             { path: 'panel/user/:lang/test', component: Test ,name: 'test' },
-            { path: 'panel/user/:lang/single_landing_page/edit/:code', component: Test ,name: 'single_landing_page' },
+            { path: 'panel/user/:lang/landing_page', component: LandingPage ,name: 'landing_page' },
+            { path: 'panel/user/:lang/single_landing_page/edit/:code', component: SingleLandingPage ,name: 'single_landing_page' },
 
         ]
     },

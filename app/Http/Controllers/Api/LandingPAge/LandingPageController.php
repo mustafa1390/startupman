@@ -16,6 +16,21 @@ class LandingPageController extends Controller
 
 
 
+    public function index(Request $request)
+    {
+
+
+        $data = $request->all();
+        $data['user_id'] = $request->user()->id;
+
+        $landing_pages =  LandingPage::where([ ['user_id',$data['user_id']], ])->orderby('id','desc')->get();
+
+        return  LandingPageResource::collection($landing_pages);
+
+
+
+    }
+
     public function store(Request $request)
     {
 

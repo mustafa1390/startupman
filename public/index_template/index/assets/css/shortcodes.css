@@ -219,7 +219,7 @@
     margin-right: 0;
 }
 
-.breadcrumbs li.icon-keyboard_arrow_right::before { 
+.breadcrumbs li.icon-keyboard_arrow_right::before {
     position: absolute;
     font-size: 12px;
 }
@@ -4998,10 +4998,9 @@ img {
     margin-right: 7px;
 }
 
-.product-item > i {
+.product-item > i { 
     position: absolute;
     font-size: 12px;
-    right: 20px;
     top: 23.5px;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
