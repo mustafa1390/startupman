@@ -822,7 +822,68 @@
 
 "Select-Busines-page-type": "نوع کسب وکار خود را انتخاب نمایید",
 "Select-landing-page-type": "نوع صفحه لندینگ پیج را انتخاب نمایید",
-"Select-multi-section": "صفحه ورود شما چه بخشهایی داشته باشد؟"
+"Select-multi-section": "صفحه ورود شما چه بخشهایی داشته باشد؟",
+
+"Shopping": "فروشگاهی",
+"Medical": "پزشکی",
+"Sports": "ورزشی",
+"Events": "رویدادها",
+"Music": "موسیقی",
+"Transportation": "حمل و نقل",
+"Finance": "مالی",
+"Education": "آموزشی",
+"Kids-and-Teens": "کودک و نوجوان",
+"Movies-and-Cinema": "فیلم و سینما",
+"Travel": "سفر",
+"Food-and-Drink": "غذا و نوشیدنی",
+"Business": "کسب و کار",
+"Other": "سایر",
+
+
+
+"Supermarket": "سوپرمارکت",
+"Coffee-shop": "کافی‌شاپ",
+"Clothing": "پوشاک",
+"Fruit-shop": "میوه‌فروشی",
+"Fast-food": "فست فود",
+"Home-appliances": " لوازم خانگی",
+"Agricultural-supplies": " لوازم کشاورزی",
+"Juice-shop": "آبمیوه‌فروشی",
+"Butcher-shop": "قصابی",
+"Catering": "کترینگ",
+"Pastry-shop-and-confectionery": " شیرینی فروشی و قنادی",
+"Restaurant": "رستوران",
+"Florist": " گل فروشی",
+"Cosmetics": " لوازم آرایشی بهداشتی",
+"Nuts-and-dried fruits": "آجیل و خشکبار",
+"Dairy": "لبنیاتی",
+"Stationery": " لوازم التحریر",
+"Perfume-shop": "عطاری",
+"Sports-equipment": " لوازم ورزشی",
+"Carpet-shop": " فرش فروشی",
+"Bakery": "نانوایی",
+
+
+
+
+"General-Practitioner": "پزشک عمومی",
+"Specialist": "پزشک متخصص",
+"Family-Physician": "پزشک خانواده",
+"Emergency-Medicine-Physician": "پزشک طب اورژانس",
+"Radiologist": "رادیولوژیست",
+"Medical-Pathologist": "پاتولوژیست پزشکی",
+"Sonographer": "سونوگرافیست",
+"Forensic-Pathologist": "پزشکی قانونی",
+"Immunologist": "ایمونولوژیست",
+"Allergist-and-Immunologist": " آلرژی و ایمنی شناس",
+"Neurologist": "نورولوژیست",
+"Electrophysiologist": "الکتروفیزیولوژیست",
+"Occupational-Medicine-Physician": " پزشک طب کار"
+
+
+
+
+
 
 
 }

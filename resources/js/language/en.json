@@ -710,10 +710,70 @@
 
 
 
-
 "Select-Busines-page-type": "Choose your business type",
 "Select-landing-page-type": "Select the landing page type",
-"Select-multi-section": "What sections should your login page have?"
+"Select-multi-section": "What sections should your login page have?",
+
+
+
+"Shopping": "Shopping",
+"Medical": "Medical",
+"Sports": "Sports",
+"Events": "Events",
+"Music": "Music",
+"Transportation": "Transportation",
+"Finance": "Finance",
+"Education": "Education",
+"Kids-and-Teens": "Kids and Teens",
+"Movies-and-Cinema": "Movies and Cinema",
+"Travel": "Travel",
+"Food-and-Drink": "Food and Drink",
+"Business": "Business",
+"Other": "Other",
+
+"Supermarket": "Supermarket",
+"Coffee-shop": "Coffee shop",
+"Clothing": "Clothing",
+"Fruit-shop": "Fruit shop",
+"Fast-food": "Fast food",
+"Home-appliances": "Home appliances",
+"Agricultural-supplies": "Agricultural supplies",
+"Juice-shop": "Juice shop",
+"Butcher-shop": "Butcher shop",
+"Catering": "Catering",
+"Pastry-shop-and-confectionery": "Pastry shop and confectionery",
+"Restaurant": "Restaurant",
+"Florist": "Florist",
+"Cosmetics": "Cosmetics",
+"Nuts-and-dried fruits": "Nuts and dried fruits",
+"Dairy": "Dairy",
+"Stationery": "Stationery",
+"Perfume-shop": "Perfume shop",
+"Sports-equipment": "Sports equipment",
+"Carpet-shop": "Carpet shop",
+"Bakery": "Bakery",
+
+
+
+"General-Practitioner": "General Practitioner",
+"Specialist": "Specialist",
+"Family-Physician": "Family Physician",
+"Emergency-Medicine-Physician": "Emergency Medicine Physician",
+"Radiologist": "Radiologist",
+"Medical-Pathologist": "Medical Pathologist",
+"Sonographer": "Sonographer",
+"Forensic-Pathologist": "Forensic Pathologist",
+"Immunologist": "Immunologist",
+"Allergist-and-Immunologist": "Allergist and Immunologist",
+"Neurologist": "Neurologist",
+"Electrophysiologist": "Electrophysiologist",
+"Occupational-Medicine-Physician": "Occupational Medicine Physician"
+
+
+
+
+
+
 
 
 

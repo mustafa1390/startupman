@@ -21,6 +21,7 @@ const routes = [
             // { path: '', component: Home ,name: 'home' },
             { path: 'panel/user/:lang/dashboard', component: Dashboard ,name: 'dashboard' },
             { path: 'panel/user/:lang/test', component: Test ,name: 'test' },
+            { path: 'panel/user/:lang/single_landing_page/edit/:code', component: Test ,name: 'single_landing_page' },
 
         ]
     },

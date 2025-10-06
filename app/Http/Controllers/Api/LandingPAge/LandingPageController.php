@@ -53,13 +53,14 @@ class LandingPageController extends Controller
         $data = $request->all();
         $data['user_id'] = $request->user()->id;
         $data['busines_group_id'] = $request->busines_group_id;
+        $data['name'] = $request->name;
 
 
          $random = Str::random(5);
          $LandingPage = LandingPage::create([  'name'=> 'landing_page' ,'user_id'=> $data['user_id'],
-        'busines_group_id'=> $data['busines_group_id']  , 'code'=>  $random]);
+        'busines_group_id'=> $data['busines_group_id']  ,'name'=> $data['name']  , 'code'=>  $random]);
         $landing_page =  LandingPage::where([ ['code',$random], ])->orderby('id','desc')->first();
-        return new LandingPageResource($landing_page); 
+        return new LandingPageResource($landing_page);
 
     }
 
