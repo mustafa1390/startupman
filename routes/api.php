@@ -53,6 +53,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::prefix('landing_page')->group(function () {
     Route::get('/index', [LandingPageController::class, 'index']);
     Route::post('/store', [LandingPageController::class, 'store']);
+    Route::post('/delete', [LandingPageController::class, 'delete']);
     Route::post('/update_section', [LandingPageController::class, 'update_section']);
     });
 

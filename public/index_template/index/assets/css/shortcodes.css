@@ -4894,9 +4894,8 @@ img {
     margin-left: 10px;
 }
 
-.menu_card {
+.menu_card { 
     position: absolute;
-    right: 15px;
     top: 0;
     display: flex;
     gap: 18px;
@@ -4998,7 +4997,7 @@ img {
     margin-right: 7px;
 }
 
-.product-item > i { 
+.product-item > i {
     position: absolute;
     font-size: 12px;
     top: 23.5px;

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('priority')->nullable();
             $table->string('status')->default('inactive');
             $table->integer('busines_group_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

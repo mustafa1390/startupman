@@ -18,7 +18,10 @@ class LandingPageResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name ,
-            'code' => $this->code
+            'code' => $this->code,
+            'user_id' => $this->user_id,
+            'user' => $this->user->name,
+            'busines_group_id' => $this->busines_group_id,
 
         ];
     }

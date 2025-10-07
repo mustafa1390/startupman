@@ -58,3 +58,11 @@ padding: 15px 15px 15px 15px;
 .d_none{
     display: none;
 }
+
+.menu_card {
+    left: 15px!important;
+}
+
+.visibility_show {
+    visibility: visible!important;
+} 

@@ -16,6 +16,7 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
+        "@fortawesome/vue-fontawesome": "^3.1.2",
         "@kyvg/vue3-notification": "^3.4.1",
         "pinia": "^3.0.3",
         "sweetalert": "^2.1.2",

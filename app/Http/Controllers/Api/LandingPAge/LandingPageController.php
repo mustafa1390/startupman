@@ -19,17 +19,27 @@ class LandingPageController extends Controller
     public function index(Request $request)
     {
 
+        $data = $request->all();
+        $data['user_id'] = $request->user()->id;
+        $landing_pages =  LandingPage::where([ ['user_id',$data['user_id']], ])->orderby('id','desc')->get();
+        return  LandingPageResource::collection($landing_pages);
+
+    }
+
+    public function delete(Request $request)
+    {
 
         $data = $request->all();
         $data['user_id'] = $request->user()->id;
-
-        $landing_pages =  LandingPage::where([ ['user_id',$data['user_id']], ])->orderby('id','desc')->get();
-
-        return  LandingPageResource::collection($landing_pages);
-
-
+        $data['code'] = $request->code;
+        $landing_page = LandingPage::where([ ['user_id',$data['user_id']],['code',$data['code']],  ])->first();
+        if($landing_page){
+        $landing_page->delete();
+        }
+        return response()->json(['message' => 'LandingPage deleted successfully.']);
 
     }
+
 
     public function store(Request $request)
     {
