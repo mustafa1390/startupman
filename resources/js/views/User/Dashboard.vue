@@ -150,8 +150,6 @@ export default {
     setup() {
         const { t } = useI18n();
         const { notify } = useNotification();
-
-
         const success = () => {
             notify({
                 title: t('success'),
@@ -163,9 +161,7 @@ export default {
                 speed: 1000,
             });
         };
-
-                return {   t, success , };
-
+                return {   t, success , }; 
 
     },
  data() {
@@ -252,9 +248,6 @@ export default {
 
 
     async mounted() {
-
-
-
 
         this.insuccess = 'Wallet_payment_gateway_successfully';
         this.inerror = 'Unfortunately_wallet_payment_failed';

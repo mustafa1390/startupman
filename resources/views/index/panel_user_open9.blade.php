@@ -37,14 +37,13 @@
 
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('fontsaws/fontaws_all.min')}}"> --}}
 
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  integrity="sha512-jQ0k8nCgD1OQptdrU9XwV8uU2YGXK1c0K/+QcX+ZUvXvD4vHqN2u8rO9Z9JHDvL9V0xOjVtU3u9H2e3rqRZ7Fw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
 
+
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
 
 @if (__('message.dir') == 'rtl')
     <link href="{{ asset('falcon/public/assets/css/mystyle.css') }}" rel="stylesheet"  >

@@ -1,42 +1,75 @@
 <template>
-  <transition name="fade">
-    <div v-if="show" class="modal-overlay" @click.self="close">
+  <div>
+    <!-- Open Button -->
+    <button @click="openModal" class="btn btn-primary" >
+      Open Modal
+    </button>
+
+    <!-- Modal Overlay -->
+
+    <div
+      v-if="showModal"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+
+
+
       <div class="modal-content">
-        <header class="modal-header">
-          <h3>{{ title }}</h3>
-          <button class="close-btn" @click="close">&times;</button>
-        </header>
-        <main class="modal-body">
-          <slot></slot>
-        </main>
-        <footer class="modal-footer">
-          <slot name="footer">
-            <button class="btn" @click="close">Close</button>
-          </slot>
-        </footer>
+
+
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="closeModal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="image">
+                            <img src="assets/images/backgroup-section/popup.png" alt="">
+                        </div>
+                        <div class="logo-rotate">
+                            <img class="" src="assets/images/item-background/item6-img.png" alt="">
+                        </div>
+                        <h2>Subscribe to our newsletter</h2>
+                        <p>Subscribe for our newsletter to stay in the loop</p>
+                        <fieldset class="email">
+                            <input type="email" class="style-1" id="email" placeholder="Email address*" name="email" tabindex="2" value="" aria-required="true" required="">
+                        </fieldset>
+                        <a href="" class="tf-button style-1 h50">Subscribe<i class="icon-arrow-up-right2"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script>
+export default {
+  name: "ClickOutsideModal",
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  methods: {
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
+    save() {
+      alert("Saved!");
+      this.closeModal();
+    },
+  },
+      props: ['type_modal' ],
 
-const props = defineProps({
-  modelValue: { type: Boolean, default: false },
-  title: { type: String, default: 'Modal Title' }
-})
-
-const emit = defineEmits(['update:modelValue'])
-
-const show = computed({
-  get: () => props.modelValue,
-  set: (val) => emit('update:modelValue', val)
-})
-
-function close() {
-  show.value = false
-}
+};
 </script>
 
 <style scoped>
@@ -71,11 +104,5 @@ function close() {
   border: none;
   background: none;
   cursor: pointer;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
 }
 </style>
