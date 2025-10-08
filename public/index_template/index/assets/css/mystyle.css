@@ -65,4 +65,21 @@ padding: 15px 15px 15px 15px;
 
 .visibility_show {
     visibility: visible!important;
-} 
+}
+
+.selected_b {
+    background-color: #DDF247!important;
+}
+.selected_b_f {
+    color: #000000!important;
+}
+
+.reative{
+    opacity: 1; transform: translateY(0px); transition: 0.6s ease-out; position: relative;
+}
+
+.trait-item{
+
+position: relative;
+  cursor: pointer;
+}

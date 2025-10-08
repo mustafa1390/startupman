@@ -87,8 +87,27 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <div data-wow-delay="0s" class="wow fadeInRight product-item traits animated visibility_show" style="visibility: visible; animation-delay: 0s; animation-name: fadeInRight;">
+                                <h6><i class="icon-description"></i>Traits</h6>
+                                <i class="icon-keyboard_arrow_down"></i>
+                                <div class="content" v-if="list_sections">
+
+                                    <div class="trait-item reative"
+                                     v-for="(section , indexsection) in list_sections"   :key="indexsection"
+                                     :class="{ selected_b: section.selected === 'selected' }"
+                                      @click="SelectedSection(section.id,section.selected)">
+                                        <p  :class="{ selected_b_f: section.selected === 'selected' }">{{ section.selected }}</p>
+                                        <div class="title"  :class="{ selected_b_f: section.selected === 'selected' }">{{ section.name }}</div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
                             <div
-      v-for="(item, index) in list_landing_pages"
+      v-for="(item, index) in filteredSelectSection"
       :key="index"
       @click="toggleeExpand(index)"
                             data-wow-delay="0s" class="wow fadeInRight product-item details animated visibility_show" style="visibility: visible; animation-delay: 0s; animation-name: fadeInRight;"  >
@@ -112,57 +131,6 @@
 
                                 </div>
                             </div>
-                            <div data-wow-delay="0s" class="wow fadeInRight product-item traits animated visibility_show" style="visibility: visible; animation-delay: 0s; animation-name: fadeInRight;">
-                                <h6><i class="icon-description"></i>Traits</h6>
-                                <i class="icon-keyboard_arrow_down"></i>
-                                <div class="content">
-                                    <div class="trait-item">
-                                        <p>Apparel</p>
-                                        <div class="title">Bathrobe Red 1%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Background</p>
-                                        <div class="title">Orange 5%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Earrings</p>
-                                        <div class="title">None 60%</div>
-                                        <p>Floor: 0,037 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Apparel</p>
-                                        <div class="title">Bathrobe Red 1%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Background</p>
-                                        <div class="title">Orange 5%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Earrings</p>
-                                        <div class="title">None 60%</div>
-                                        <p>Floor: 0,037 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Apparel</p>
-                                        <div class="title">Bathrobe Red 1%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Background</p>
-                                        <div class="title">Orange 5%</div>
-                                        <p>Floor: 0,056 ETH</p>
-                                    </div>
-                                    <div class="trait-item">
-                                        <p>Earrings</p>
-                                        <div class="title">None 60%</div>
-                                        <p>Floor: 0,037 ETH</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,6 +143,8 @@
 
 <script>
      import { indexLandingPage } from '@/services/landing_page/index_landing_page.js';
+     import { sectionByLandingPage } from '@/services/section/by_landing_page.js';
+     import { updateSectionUser } from '@/services/section/update_section_user.js';
 
 export default {
 
@@ -186,6 +156,8 @@ export default {
   data() {
       return {
         list_landing_pages: [],
+        show_landing_page: [],
+        list_sections: [],
         mytarget: [],
       };
     },
@@ -193,7 +165,24 @@ export default {
         async created () {
          var list_landing_pages = await indexLandingPage()
         this.list_landing_pages = list_landing_pages;
-        console.log(this.list_landing_pages);
+
+
+
+
+        const credentials = {
+        code:  this.$route.params.code,
+      };
+
+
+         var list_sections = await sectionByLandingPage(credentials)
+         this.list_sections = list_sections;
+
+
+
+
+        //  var list_sections = await indexLandingPage()
+        // this.list_sections = list_sections;
+        console.log(this.list_sections);
         // alert('hi');
         },
 
@@ -201,13 +190,37 @@ export default {
 
         toggleeExpand(m){
             this.mytarget[m] =  !this.mytarget[m];
+        },
+
+      async  SelectedSection(n,selecti){
+
+        // alert(selecti);
+        const credentials = {
+        code:  this.$route.params.code,
+        selected:   selecti,
+        section_id:   n,
+      };
+
+
+         var list_sections = await updateSectionUser(credentials)
+         this.list_sections = list_sections;
+
+
+
         }
 
     },
     async mounted() {
         this.mytarget[0] = true;
 
-    }
+    },
+
+  computed: {
+    filteredSelectSection() {
+      return this.list_sections.filter(item => item.selected == 'selected');
+    },
+},
+
 }
 </script>
 

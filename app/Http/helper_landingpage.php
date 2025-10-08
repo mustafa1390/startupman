@@ -195,11 +195,11 @@ if(! function_exists('law_selected_section') ) {
 if($type=='Section'){ $sectionable_type = 'App\Models\Section'; }
 
 $section_user = SectionUser::where([
-    ['user_id',$landing_page->user->id], ['sectionable_id',$sectionable_id],
+    ['user_id',$landing_page->user->id], ['sectionable_id',$sectionable_id],['status','<>','inactive'],
     ['sectionable_type',$sectionable_type], ['landing_page_id',$landing_page->id], ])->orderby('id','desc')->first();
 
 
-    if($section_user){ 
+    if($section_user){
         $out = 'selected';
     }else{
         $out = 'unselect';

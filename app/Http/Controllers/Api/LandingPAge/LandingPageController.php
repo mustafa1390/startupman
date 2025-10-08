@@ -129,4 +129,12 @@ $Section->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => 1]);
     }
 
 
+
+    public function show($code , Request $request)
+    {
+
+
+
+    }
+
 }

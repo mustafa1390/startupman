@@ -57,11 +57,14 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/delete', [LandingPageController::class, 'delete']);
     Route::post('/update_section', [LandingPageController::class, 'update_section']);
     Route::get('/list_section/{code}', [LandingPageController::class, 'list_section']);
+    Route::get('/show/{code}', [LandingPageController::class, 'show']);
+
     });
 
     Route::prefix('section')->group(function () {
     Route::get('/index', [SectionController::class, 'index']);
     Route::post('/by_landing_page', [SectionController::class, 'by_landing_page']);
+    Route::post('/by_landing_page/update_section_user', [SectionController::class, 'update_section_user']);
     });
 
 });
