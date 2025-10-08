@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\LandingPAge;
 
+use App\Models\Section;
 use App\Models\LandingPage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -98,4 +99,34 @@ class LandingPageController extends Controller
 
 
     }
+
+
+
+    public function list_section(Request $request)
+    {
+        $data = $request->all();
+        $data['user_id'] = $request->user()->id;
+
+
+$Section = Section::find(1);
+// $Section->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => $LandingPage->id ]);
+// $sectionPublic = SectionPublic::find(2);
+// $sectionPublic->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => $LandingPage->id ]);
+// $sectionPublic = SectionPublic::find(4);
+
+$Section->sectionUsers()->create(['user_id' => 1 , 'landing_page_id' => 1]);
+
+
+
+
+
+
+        $landing_pages =  LandingPage::where([ ['user_id',$data['user_id']], ])->orderby('id','desc')->get();
+        return  LandingPageResource::collection($landing_pages);
+
+
+
+    }
+
+
 }

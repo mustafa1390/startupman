@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\Section\SectionController;
 use App\Http\Controllers\Api\User\ConfigController;
 
 // Route::get('/', function () {
@@ -55,6 +56,12 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/store', [LandingPageController::class, 'store']);
     Route::post('/delete', [LandingPageController::class, 'delete']);
     Route::post('/update_section', [LandingPageController::class, 'update_section']);
+    Route::get('/list_section/{code}', [LandingPageController::class, 'list_section']);
+    });
+
+    Route::prefix('section')->group(function () {
+    Route::get('/index', [SectionController::class, 'index']);
+    Route::post('/by_landing_page', [SectionController::class, 'by_landing_page']);
     });
 
 });

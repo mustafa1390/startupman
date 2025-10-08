@@ -185,3 +185,28 @@ if(! function_exists('config_run_first') ) {
         landing_model_v1('SectionPublic');
     }
 }
+
+
+
+if(! function_exists('law_selected_section') ) {
+    function law_selected_section($sectionable_id,$type,$landing_page )
+    {
+
+if($type=='Section'){ $sectionable_type = 'App\Models\Section'; }
+
+$section_user = SectionUser::where([
+    ['user_id',$landing_page->user->id], ['sectionable_id',$sectionable_id],
+    ['sectionable_type',$sectionable_type], ['landing_page_id',$landing_page->id], ])->orderby('id','desc')->first();
+
+
+    if($section_user){ 
+        $out = 'selected';
+    }else{
+        $out = 'unselect';
+    }
+
+    return $out;
+
+
+    }
+}
