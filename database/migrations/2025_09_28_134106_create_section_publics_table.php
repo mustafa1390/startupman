@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name')->default('setting')->nullable();
             $table->string('priority')->nullable();
             $table->string('status')->default('active');
-            $table->integer('section_id');
+            $table->string('section_id')->nullable();
             $table->timestamps();
         });
     }

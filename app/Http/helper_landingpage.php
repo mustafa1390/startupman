@@ -7,54 +7,80 @@ use App\Models\SectionUser;
 use Illuminate\Support\Str;
 use App\Models\BusinesGroup;
 use App\Models\SectionPublic;
+use App\Models\SectionTemplate;
 use Illuminate\Support\Facades\Hash;
+
+if(! function_exists('landing_model_v2') ) {
+    function landing_model_v2($model,$id)
+    {
+         if($model == 'SectionPublic'){
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'float' , 'name'=> 'right' , 'section_id'=> $id
+            ],[ 'type'=> 'float' , 'name'=> 'right' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'float' , 'name'=> 'center' , 'section_id'=> $id
+            ],[ 'type'=> 'float' , 'name'=> 'center' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'float' , 'name'=> 'left' , 'section_id'=> $id
+            ],[ 'type'=> 'float' , 'name'=> 'left' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'bg' , 'name'=> 'color' , 'section_id'=> $id
+            ],[ 'type'=> 'bg' , 'name'=> 'color' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'bg' , 'name'=> 'url' , 'section_id'=> $id
+            ],[ 'type'=> 'bg' , 'name'=> 'url' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionPublic::updateOrCreate([ 'type'=> 'bg' , 'name'=> 'none' , 'section_id'=> $id
+            ],[ 'type'=> 'bg' , 'name'=> 'none' , 'section_id'=> $id
+            ]);
+        }
+
+
+         if($model == 'SectionTemplate'){
+
+            $updateorinsert = SectionTemplate::updateOrCreate([   'name'=> 'Template1' , 'section_id'=> $id
+            ],[   'name'=> 'Template1' , 'section_id'=> $id
+            ]);
+            // dd($id);
+
+            $updateorinsert = SectionTemplate::updateOrCreate([   'name'=> 'Template2' , 'section_id'=> $id
+            ],[   'name'=> 'Template2' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionTemplate::updateOrCreate([   'name'=> 'Template3' , 'section_id'=> $id
+            ],[   'name'=> 'Template3' , 'section_id'=> $id
+            ]);
+
+            $updateorinsert = SectionTemplate::updateOrCreate([   'name'=> 'Template4' , 'section_id'=> $id
+            ],[   'name'=> 'Template4' , 'section_id'=> $id
+            ]);
+
+        }
+
+    }
+}
 
 if(! function_exists('landing_model_v1') ) {
     function landing_model_v1($model)
     {
 
          if($model == 'SectionPublic'){
-
+            landing_model_v2($model,'landing');
             $section = Section::where([ ['name','Title'], ])->first();
             $section_id = $section->id;
+            landing_model_v2($model,$section_id);
+         }
 
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'float' , 'name'=> 'right' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'float' , 'name'=> 'right' , 'section_id'=> $section_id
-            ]);
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'float' , 'name'=> 'center' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'float' , 'name'=> 'center' , 'section_id'=> $section_id
-            ]);
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'float' , 'name'=> 'left' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'float' , 'name'=> 'left' , 'section_id'=> $section_id
-            ]);
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'bg' , 'name'=> 'color' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'bg' , 'name'=> 'color' , 'section_id'=> $section_id
-            ]);
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'bg' , 'name'=> 'url' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'bg' , 'name'=> 'url' , 'section_id'=> $section_id
-            ]);
-
-            $updateorinsert = SectionPublic::updateOrCreate([
-                'type'=> 'bg' , 'name'=> 'none' , 'section_id'=> $section_id
-            ],[
-                'type'=> 'bg' , 'name'=> 'none' , 'section_id'=> $section_id
-            ]);
-
+         if($model == 'SectionTemplate'){
+            landing_model_v2($model,'landing');
+            $section = Section::where([ ['name','Title'], ])->first();
+            $section_id = $section->id;
+            landing_model_v2($model,$section_id);
          }
 
          if($model == 'Admin'){
@@ -183,6 +209,7 @@ if(! function_exists('config_run_first') ) {
         landing_model_v1('BusinesGroup');
         landing_model_v1('Section');
         landing_model_v1('SectionPublic');
+        landing_model_v1('SectionTemplate');
     }
 }
 

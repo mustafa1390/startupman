@@ -9,7 +9,7 @@ class SectionTemplate extends Model
 {
 
 
-    protected $fillable = ['name', 'status', 'priority'];
+    protected $fillable = ['name', 'status', 'section_id', 'priority', 'path'];
 
 
 }
