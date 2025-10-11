@@ -35,6 +35,7 @@ Route::controller(RegisterController::class)->group(function(){
 
 
 Route::middleware('auth:sanctum')->group( function () {
+    
 
     Route::get('/user/codeverify', [ProfileController::class, 'user_codeverify']);
     Route::post('/user/checked_codeverify', [ProfileController::class, 'checked_codeverify']);
